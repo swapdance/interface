@@ -49,7 +49,10 @@
           </div>
              
           <div className='simple-card' style="background: white">
-            <h4 style="text-align: left; margin-bottom: 1rem;">Status</h4>
+            <div className='wrapper2a' style="margin-bottom: 1rem; grid-template-columns: 2.9fr 0.2fr;">
+              <h4 style="text-align: left;">Status</h4>
+              <router-link style="text-decoration: none; color: inherit;" to="/super_pool_help"><div class="help-tip"></div></router-link>
+            </div>
             <div className='wrapper2inline' style="margin-bottom: 1rem;">
               <p style="text-align: left;">Period</p>
               <p style="text-align: right;">{{forming}}</p>

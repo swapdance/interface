@@ -65,6 +65,9 @@
                 @input="token_amount1 = $event.target.value" 
                 oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
                 placeholder="1.0">
+            </div>
+            <hr v-if="add_liquidity_station_type == 1 && token_balance_calc1 == 0 && token_balance_calc2 == 0" class="solid">
+            <div v-if="add_liquidity_station_type == 1 && token_balance_calc1 == 0 && token_balance_calc2 == 0" className='wrapper2inline' style="grid-row-gap: 0rem;">
               <router-link @click="check()" :to="{name: 'Pair List'}">
                 <input type="sell_select_tokens" style="text-align: left; width: 100%;" :value="token_symbol2 + ' ⩖'" :disabled="true">
               </router-link>
@@ -74,6 +77,7 @@
                 oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
                 placeholder="1.0">
             </div>
+            
             <div v-if="token_balance_calc1 > 0 && token_balance_calc2 > 0 || (add_liquidity_station_type == 0 && token_balance_calc1 == 0 && token_balance_calc2 == 0)"  className='wrapper2inline'>
               <p style="text-align: left;">Deposit <a href="#max" @click="use_max_balance()">Max</a></p>
               <p style="text-align: right;">{{token_name1}}</p>
@@ -84,7 +88,10 @@
             </div>
           </div>
           <div className='simple-card' style="background: white">
-            <h4 style="text-align: left; margin-bottom: 1rem;">Deposit</h4>
+            <div className='wrapper2a' style="margin-bottom: 1rem; grid-template-columns: 2.9fr 0.2fr;">
+              <h4 style="text-align: left;">Deposit</h4>
+              <router-link style="text-decoration: none; color: inherit;" to="/liquidity_help"><div class="help-tip"></div></router-link>
+            </div>
             <div className='wrapper2a' style="margin-bottom: 1rem; grid-template-columns: 0.5fr 2.6fr;">
               <p style="text-align: left;">Token 1</p>
               <p style="text-align: right;">{{token_amount1}} <mark class="purple">{{token_symbol1}}</mark></p>
@@ -111,7 +118,7 @@
               <p style="text-align: right;" :class="pool_impact > 5 ? 'green_class' : ''">{{pool_impact.toString().substring(0, 12)}}%</p>
             </div>
             <div className='wrapper2inline' style="margin-bottom: 1rem;">
-              <p style="text-align: left;">Pair Fee</p>
+              <p style="text-align: left;" >Pair Fee</p>
               <p style="text-align: right;">{{token_fee1}}% / {{token_fee2}}%</p>
             </div>
             <div v-if="token_balance1 == 0 && token_balance2 == 0" className='wrapper2inline' style="margin-bottom: 1rem;">
@@ -423,7 +430,6 @@ export default {
         let check_max_amount1 = ethers.utils.parseUnits(max_amount1.toString(), this.decimal1);
         let check_max_amount2 = ethers.utils.parseUnits(max_amount2.toString(), this.decimal2);
         // check errors before push new tx
-        
         this.error_amount_token1 = false;
         this.error_amount_token2 = false;
         this.error_max_amount_token1 = false;
@@ -523,13 +529,6 @@ export default {
   grid-template-columns: 0.9fr 0.9fr 1.2fr;
   grid-column-gap: 10px;
   grid-row-gap: 1em;
-}
-
-.wrapper4plus {
-  display: grid;
-  grid-template-columns: 0.8fr 0.8fr 0.8fr 0.8fr;
-  grid-column-gap: 5px;
-  grid-row-gap: 0em;
 }
 
 </style>

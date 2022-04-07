@@ -64,7 +64,10 @@
             </div>
           </div>        
           <div className='simple-card' style="background: white">
-            <h4 style="text-align: left; margin-bottom: 1rem;">PoT info</h4>
+            <div className='wrapper2a' style="margin-bottom: 1rem; grid-template-columns: 2.9fr 0.2fr;">
+              <h4 style="text-align: left;">PoT info</h4>
+              <router-link style="text-decoration: none; color: inherit;" to="/proof_of_trade_help"><div class="help-tip"></div></router-link>
+            </div>
             <div className='wrapper2inline' style="margin-bottom: 1rem;">
               <p style="text-align: left;">My Stake</p>
               <p style="text-align: right;">{{nFormatter(my_stake).toString().substring(0, 12)}} LP</p>

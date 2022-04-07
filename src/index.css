@@ -369,4 +369,21 @@ footer .container {
 }
 
 
-
+/* Tooltip */
+.help-tip{
+  right: 18px;
+  text-align: center;
+  background-color: #008a7b;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  line-height: 26px;
+  cursor: pointer;
+}
+  
+.help-tip:before{
+  content:'?';
+  font-weight: bold;
+  color:#fff;
+}
+  

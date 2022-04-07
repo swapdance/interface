@@ -64,15 +64,17 @@
               </router-link>
               <input style="text-right: left; width: 100%;" :value="fees" @input="fees = $event.target.value" placeholder="0.2%">
             </div>
-            <div className='wrapper2inline'>
+            <div className='wrapper3' style="grid-template-columns: 1.7fr 0.6fr 0.05fr 0.8fr; grid-column-gap: 1px;">
               <p style="text-align: left;">Recommended Fee</p>
-              <p style="text-align: right;">Stable 4 / Dynamic 20 </p>
+              <p style="text-align: right;"><a href="#stable" @click="set_fee(4)">Stable 4</a>&nbsp;</p>
+              <p style="text-align: right;">/</p>
+              <p style="text-align: right;"><a href="#dynamic" @click="set_fee(20)">Dynamic 20</a></p>
             </div>
           </div>      
           <div className='simple-card' style="background: white">
-            <div className='wrapper2inline'>
-              <h4 style="text-align: left; margin-bottom: 1rem;">Pool info</h4>
-              <h4 style="text-align: right; cursor: pointer;">Help?</h4>
+            <div className='wrapper2a' style="margin-bottom: 1rem; grid-template-columns: 2.9fr 0.2fr;">
+              <h4 style="text-align: left;">Pool info</h4>
+              <router-link style="text-decoration: none; color: inherit;" to="/new_pair_help"><div class="help-tip"></div></router-link>
             </div>
             <div className='wrapper2inline' style="margin-bottom: 1rem;">
               <p style="text-align: left;">Pair Fee</p>
@@ -107,27 +109,28 @@
               <p style="text-align: right; cursor: pointer;" @click="check_market(2)">Dynamic</p>
             </div>
           </div>
-          <p style="margin-bottom: 1rem;">For your convenience and other traders, follow the sequence of tokens when creating a new pair. <br><strong>For instance, wBTC - USDC or wETH - DANCE</strong>.</p>
+          <hr class="solid">
+          <p style="margin-bottom: 1rem; margin-top: 1rem;">For your convenience and other traders, follow the sequence of tokens when creating a new pair. <br><strong>For instance, wBTC - USDC or wETH - DANCE</strong>.</p>
           <hr class="solid">
             <div v-if="empty_fees == true" className='wrapper2inline' style="margin-top: 1rem;">
               <p style="text-align: left;">Error</p>
-              <p style="text-align: right; color: rgb(223, 49, 49);">Empty Fee</p>
+              <p style="text-align: right; color: rgb(223, 49, 49);">Empty fee</p>
             </div>
             <div v-if="empty_type == true" className='wrapper2inline' style="margin-top: 1rem;">
               <p style="text-align: left;">Error</p>
-              <p style="text-align: right; color: rgb(223, 49, 49);">Select Market Type</p>
+              <p style="text-align: right; color: rgb(223, 49, 49);">Select market type</p>
             </div>
             <div v-if="empty_token1 == true" className='wrapper2inline' style="margin-top: 1rem;">
               <p style="text-align: left;">Error</p>
-              <p style="text-align: right; color: rgb(223, 49, 49);">Select Token 1</p>
+              <p style="text-align: right; color: rgb(223, 49, 49);">Select token 1</p>
             </div>
             <div v-if="empty_token2 == true" className='wrapper2inline' style="margin-top: 1rem;">
               <p style="text-align: left;">Error</p>
-              <p style="text-align: right; color: rgb(223, 49, 49);">Select Token 2</p>
+              <p style="text-align: right; color: rgb(223, 49, 49);">Select token 2</p>
             </div>
             <div v-if="pair_exist == true" className='wrapper2inline' style="margin-top: 1rem;">
               <p style="text-align: left;">Error</p>
-              <p style="text-align: right; color: rgb(223, 49, 49);">Pair Already Exist</p>
+              <p style="text-align: right; color: rgb(223, 49, 49);">Pair already exist</p>
             </div>
           <button v-if="connect_button == 'Connect to a wallet'" v-on:click="create_connect">{{connect_button}}</button>
           <button v-if="connect_button == 'Create a New Pair'" v-on:click="create_connect">{{connect_button}}</button>
@@ -204,9 +207,14 @@ export default {
       store.state.market_type = idx;
     }
 
+    function set_fee(idx) {
+      fees.value = idx;
+    }
+
     return {
       fees,
       market,
+      set_fee,
       open_addr,
       pair_exist,
       empty_fees,

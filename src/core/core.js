@@ -1088,10 +1088,11 @@ export default {
         var count;
 
         count = (await this.exchange_count()).exchange_count;
+        
         for (let i = 1; count >= i; i+=50) {
-        data = (await this.get_data_block(i)).data_block;
-        store.state.data_list = data;
-        store.dispatch("load_data");
+            data = (await this.get_data_block(i)).data_block;
+            store.state.data_list = data;
+            store.dispatch("load_data");
         }
         store.dispatch("prepare_data");
     }

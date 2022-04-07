@@ -30,6 +30,7 @@
                   :value="amount_to_lock"
                   @input="amount_to_lock = $event.target.value" 
                   @keyup="change_amount(amount_to_lock)"
+                  oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
                   style="width:100%; height: 4.4rem; padding-right: 0.6rem;" 
                   placeholder="1.0" />
           </div>

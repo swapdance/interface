@@ -366,7 +366,7 @@ const store = createStore({
             }
         },
         async prepare_data(state) {
-            console.log("state.full_data_list", state.full_data_list)
+        //    console.log("state.full_data_list", state.full_data_list)
             
             if (state.search_pair_list.length > 0) {
                 state.search_pair_list = [];

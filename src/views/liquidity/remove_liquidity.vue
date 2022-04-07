@@ -57,7 +57,10 @@
             </div>
           </div>
           <div className='simple-card' style="background: white">
-            <h4 style="text-align: left; margin-bottom: 1rem;">Receive</h4>
+            <div className='wrapper2a' style="margin-bottom: 1rem; grid-template-columns: 2.9fr 0.2fr;">
+              <h4 style="text-align: left;">Receive</h4>
+              <router-link style="text-decoration: none; color: inherit;" to="/liquidity_help"><div class="help-tip"></div></router-link>
+            </div>
             <div className='wrapper2inline' style="margin-bottom: 1rem; grid-template-columns: 0.5fr 2.6fr;">
               <p style="text-align: left;">Token 1</p>
               <p style="text-align: right;">{{token_amount_out1}} <mark class="purple">{{token_symbol1}}</mark></p>

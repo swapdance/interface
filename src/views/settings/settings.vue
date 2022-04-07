@@ -149,6 +149,7 @@ export default {
     function button_slippage_create(e) {
       store.state.settings_create = e;
     }
+    
     function go_back() {
       history.back();
     }

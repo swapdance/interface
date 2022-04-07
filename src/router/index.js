@@ -1,37 +1,53 @@
 import { createWebHistory, createRouter } from "vue-router";
+// Home
 import Home from "@/views/inferface.vue";
 import ETHtoWETH from "@/views/convert_eth_to_weth.vue";
 import Settings from "@/views/settings/settings.vue";
 import SwitchNetwork from "@/views/settings/switch_network.vue";
-import TokenList from "@/views/lists/token_list.vue";
-import PairList from "@/views/lists/pair_list.vue";
-import ProofOfTradeList from "@/views/lists/pot_list.vue";
-import AddLiquidity from "@/views/liquidity/add_liquidity.vue";
-import RemoveLiquidity from "@/views/liquidity/remove_liquidity.vue";
-import NewPool from "@/views/create/new_pool.vue";
+// create
 import NewPoT from "@/views/create/new_pot.vue";
-import NewPoTList from "@/views/lists/new_pot_list.vue";
+import NewPool from "@/views/create/new_pool.vue";
 import ImportToken from "@/views/create/import_token.vue";
-import ProofOfTrade from "@/views/proof/proof_of_trade.vue";
-import ProofOfTradeUnstake from "@/views/proof/proof_of_trade_unstake.vue";
+// super
 import SuperPool from "@/views/super/super_pool.vue";
 import SuperPoolUnlock from "@/views/super/super_pool_unlock.vue";
-import HowDoesItWorks from "@/views/info/how_does_it_works.vue";
+// liquidity
+import AddLiquidity from "@/views/liquidity/add_liquidity.vue";
+import RemoveLiquidity from "@/views/liquidity/remove_liquidity.vue";
+// proof of trade
 import GetReward from "@/views/proof/get_reward.vue";
+import ProofOfTrade from "@/views/proof/proof_of_trade.vue";
+import ProofOfTradeUnstake from "@/views/proof/proof_of_trade_unstake.vue";
+// lists
+import PairList from "@/views/lists/pair_list.vue";
+import TokenList from "@/views/lists/token_list.vue";
 import RewardList from "@/views/lists/reward_list.vue";
-import ConfirmNewLiquidity from "@/views/confirm/deposit_liquidity.vue";
-import ConfirmRemoveLiquidity from "@/views/confirm/withdraw_liquidity.vue";
-import ConfirmNewPair from "@/views/confirm/create_pair.vue";
+import NewPoTList from "@/views/lists/new_pot_list.vue";
+import ProofOfTradeList from "@/views/lists/pot_list.vue";
+// help
+import NewPoTHelp from "@/views/info/new_pot_help.vue";
+import NewPairHelp from "@/views/info/new_pair_help.vue";
+import PoTHelp from "@/views/info/proof_of_trade_help.vue";
+import LiquidityHelp from "@/views/info/liquidity_help.vue";
+import SuperPoolHelp from "@/views/info/super_pool_help.vue";
+import PoTReward from "@/views/info/proof_of_trade_reward_help.vue";
+// confirm
+import ConfirmReward from "@/views/confirm/reward.vue"; 
+import ConfirmConvert from "@/views/confirm/convert.vue";  
 import ConfirmNewPoT from "@/views/confirm/create_pot.vue";
+import ConfirmSwapCoin from "@/views/confirm/swap_coin.vue";
+import ConfirmNewPair from "@/views/confirm/create_pair.vue";
+import ConfirmLockFunds from "@/views/confirm/super_lock.vue"; 
+import ConfirmSwapTokens from "@/views/confirm/swap_tokens.vue";
 import ConfirmPoTDeposit from "@/views/confirm/deposit_pot_lp.vue";
 import ConfirmPoTWithdrawal from "@/views/confirm/withdraw_pot_lp.vue";
-import ConfirmLockFunds from "@/views/confirm/super_lock.vue"; 
-import ConfirmReward from "@/views/confirm/reward.vue"; 
-import ConfirmConvert from "@/views/confirm/convert.vue"; 
-import ConfirmSwapTokens from "@/views/confirm/swap_tokens.vue"; 
-import ConfirmSwapCoin from "@/views/confirm/swap_coin.vue";
+import ConfirmNewLiquidity from "@/views/confirm/deposit_liquidity.vue";
+import ConfirmRemoveLiquidity from "@/views/confirm/withdraw_liquidity.vue";
 import ConfirmSuperWithReward from "@/views/confirm/unlock_super_with_reward.vue";
 import ConfirmSuperWithoutReward from "@/views/confirm/unlock_super_without_reward.vue";
+// footer
+import Risks from "@/views/info/risks.vue";
+import TermsOfService from "@/views/info/terms_of_service.vue";
 
 const routes = [
   {
@@ -53,6 +69,16 @@ const routes = [
     path: "/convert_eth_to_weth",
     name: "Convert ETH to WETH",
     component: ETHtoWETH,
+  },
+  {
+    path: "/risks",
+    name: "Risks",
+    component: Risks,
+  },
+  {
+    path: "/terms_of_service",
+    name: "Terms of Service",
+    component: TermsOfService,
   },
   {
     path: "/token_list",
@@ -125,9 +151,34 @@ const routes = [
     component: SuperPoolUnlock,
   },
   {
-    path: "/how_does_it_works",
-    name: "How Does It Works",
-    component: HowDoesItWorks,
+    path: "/new_pair_help",
+    name: "New Pair Help",
+    component: NewPairHelp,
+  },
+  {
+    path: "/proof_of_trade_help",
+    name: "Proof of trade help",
+    component: PoTHelp,
+  },
+  {
+    path: "/new_pot_pool_help",
+    name: "New PoT Pool Help",
+    component: NewPoTHelp,
+  },
+  {
+    path: "/proof_of_trade_reward_help",
+    name: "Proof of trade reward help",
+    component: PoTReward,
+  },
+  {
+    path: "/super_pool_help",
+    name: "Super Pool Help",
+    component: SuperPoolHelp,
+  },
+  {
+    path: "/liquidity_help",
+    name: "Liquidity Help",
+    component: LiquidityHelp,
   },
   {
     path: "/reward_list",

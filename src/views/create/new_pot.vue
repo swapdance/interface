@@ -66,7 +66,10 @@
             
           </div>      
           <div className='simple-card' style="background: white">
-            <h4 style="text-align: left; margin-bottom: 1rem;">Pool info</h4>
+            <div className='wrapper2a' style="margin-bottom: 1rem; grid-template-columns: 2.9fr 0.2fr;">
+              <h4 style="text-align: left;">Pool info</h4>
+              <router-link style="text-decoration: none; color: inherit;" to="/new_pot_pool_help"><div class="help-tip"></div></router-link>
+            </div>
             <div className='wrapper2inline' style="margin-bottom: 1rem;">
               <p style="text-align: left;">Pair Fee</p>
               <p style="text-align: right;">{{token_fee1}}% / {{token_fee2}}%</p>
@@ -81,7 +84,8 @@
             </div>
 
           </div>
-          <p style="margin-bottom: 1rem;">Proof of trade pool allow you and other LP providers receive <mark class="purple">$DANCE</mark> token to claim Super Pool LPs.</p>
+          <hr class="solid">
+          <p style="margin-bottom: 1rem; margin-top: 1rem;">Proof of trade pool allow you and other LP providers receive <mark class="purple">$DANCE</mark> token to claim Super Pool LPs.</p>
           <hr class="solid">
           <button v-if="connect_button == 'Connect to a wallet'" v-on:click="proof_of_trade_connect">{{connect_button}}</button>
           <router-link to="/confirm_new_pot"><button v-if="connect_button == 'Create a New PoT Pool'" v-on:click="proof_of_trade_connect">{{connect_button}}</button></router-link>

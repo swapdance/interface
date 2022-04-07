@@ -65,17 +65,11 @@
             </div>
           </div>      
           <div className='simple-card' style="background: white">
-            <h4 style="text-align: left; margin-bottom: 1rem;">Pair info</h4>
+            <div className='wrapper2a' style="margin-bottom: 1rem; grid-template-columns: 2.9fr 0.2fr;">
+              <h4 style="text-align: left;">Reward info</h4>
+              <router-link style="text-decoration: none; color: inherit;" to="/proof_of_trade_reward_help"><div class="help-tip"></div></router-link>
+            </div>
 
-            <div className='wrapper2inline' style="margin-bottom: 1rem; grid-template-columns: 0.55fr 2.6fr;">
-              <p style="text-align: left;">Token 1</p>
-              <p style="text-align: right;"><mark class="purple">{{token_symbol1}}</mark></p>
-            </div>
-            <div className='wrapper2inline' style="margin-bottom: 1rem; grid-template-columns: 0.55fr 2.6fr;">
-              <p style="text-align: left;">Token 2</p>
-              <p style="text-align: right;"><mark class="purple">{{token_symbol2}}</mark></p>
-            </div>
-            <h4 style="text-align: left; margin-bottom: 1rem;">Reward info</h4>
             <div className='wrapper2inline' style="margin-bottom: 1rem; grid-template-columns: 1fr 2fr;">
               <p style="text-align: left;">Round Reward</p>
               <p style="text-align: right;">{{round_reward.toString().substring(0, 12)}} <mark class="purple">DANCE</mark></p>

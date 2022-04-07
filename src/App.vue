@@ -51,7 +51,6 @@
             <div class="dropdown-content">
               <router-link style="text-decoration: none; color: inherit;" :to="{name: 'Super Pool'}"><p style="margin-bottom: 0.4rem; margin-top: 0.4rem;">Lock Funds</p></router-link>
               <router-link style="text-decoration: none; color: inherit;" :to="{name: 'Super Pool Unlock'}"><p style="margin-bottom: 0.4rem; margin-top: 0.4rem;">Claim Funds</p></router-link>
-              <router-link style="text-decoration: none; color: inherit;" :to="{name: 'How Does It Works'}"><p style="margin-bottom: 0.4rem; margin-top: 0.4rem;">How Does It Works</p></router-link>
             </div>
           </div>
           <p style="margin-top: 0.1rem; margin-bottom: 0.5rem;">Stats</p>
@@ -72,7 +71,11 @@
     <router-view />
     <footer>
       <div className='container'>
-        <mark class="purple"> {{block_number}}</mark>
+        <div className='wrapper2app'>
+          <p style="text-align: left; color: black;"><router-link style="text-decoration: none; color: inherit;" to="/terms_of_service">Terms of service</router-link></p>
+          <p style="text-align: left; color: black;"><router-link style="text-decoration: none; color: inherit;" to="/risks">Risks</router-link></p>
+        </div>
+        <mark class="purple" style="cursor: pointer;" @click="open_block()"> {{block_number}}</mark>
       </div>
     </footer>
   </main>
@@ -90,9 +93,15 @@ export default {
 
     const store = useStore();
     const block_number = computed(() => store.state.block_num);
+    const etherscan_link = computed(() => store.state.etherscan_link);
     const current_network_name = computed(() => store.state.current_network_name);
 
+    function open_block() {
+        let full_link = etherscan_link.value + 'block/' + block_number.value
+        window.open(full_link, '_blank');
+    }
     return {
+      open_block,
       block_number,
       current_network_name,
     }
@@ -152,6 +161,14 @@ export default {
   .dropdown3:hover .dropdown-content {
     display: block;
     min-width: 9rem;
+  }
+
+  .wrapper2app {
+    display: grid;
+    grid-template-columns: 0.15fr 0.5fr;
+    grid-column-gap: 10px;
+    grid-row-gap: 1em;
+    width: 100%;
   }
 
 </style>
