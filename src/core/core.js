@@ -1088,8 +1088,8 @@ export default {
         var count;
 
         count = (await this.exchange_count()).exchange_count;
-        
-        for (let i = 1; count >= i; i+=50) {
+        // load block data 30 tokens at once
+        for (let i = 1; count >= i; i+=30) {
             data = (await this.get_data_block(i)).data_block;
             store.state.data_list = data;
             store.dispatch("load_data");

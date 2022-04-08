@@ -21,9 +21,17 @@
 
 <script>
 
+import { useMeta } from 'vue-meta'
+
 export default {
   name: 'New proof of trade pool help',
   setup() {
+
+    useMeta({
+      title: 'New Proof of Trade Pool Help : Swap.Dance', 
+      htmlAttrs: { lang: 'en', amp: true },
+      keywords: 'Swap.Dance, Token Pair, Proof of Trade Pool, Swap tokens, Exchange tokens, DEX, AMM',
+    })
 
     function go_back() {
       history.back();

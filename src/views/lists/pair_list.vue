@@ -31,12 +31,19 @@
 
 <script>
 
-import { useStore } from "vuex";
 import { computed } from "vue";
+import { useStore } from "vuex";
+import { useMeta } from 'vue-meta'
 
 export default {
   name: 'pair list',
   setup() {
+    
+    useMeta({
+      title: 'Token Pair List : Swap.Dance', 
+      htmlAttrs: { lang: 'en', amp: true },
+      keywords: 'Swap.Dance, Token Pair, Swap tokens, Exchange tokens, DEX, AMM',
+    })
 
     const store = useStore();
     const etherscan_link = computed(() => store.state.etherscan_link);

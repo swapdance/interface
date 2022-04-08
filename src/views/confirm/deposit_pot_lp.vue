@@ -91,12 +91,19 @@
 
 <script>
 import { useStore } from "vuex";
+import { useMeta } from 'vue-meta'
 import { computed, ref } from "vue";
 //watchEffect
 export default {
-  name: 'confirm new liquidity',
+  name: 'confirm new lp token deposit',
   setup() {
-    // to do! if user has non zero amount, then we should show the reward?
+
+    useMeta({
+      title: 'Confirm Deposit LP Token: Swap.Dance', 
+      htmlAttrs: { lang: 'en', amp: true },
+      keywords: 'Swap.Dance, LP Token, Proof of trade, Deposit token',
+    })
+    
     const store = useStore();
     const title = ref("PoT Deposit");
     // hash info

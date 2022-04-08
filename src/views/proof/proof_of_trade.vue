@@ -113,12 +113,20 @@
 <script>
 import core from "@/core/core";
 import { useStore } from "vuex";
+import { useMeta } from 'vue-meta'
 const { ethers } = require('ethers');
 import { nFormatter } from "@/helpers/numbers";
 import { ref, computed, watchEffect } from "vue";
 export default {
   name: 'proof of trade',
   setup() {
+
+    useMeta({
+      title: 'Stake LP Token : Proof of Trade : Swap.Dance', 
+      description: 'Choose a Proof of Trade Pool accordingly to your LP token, set an amount, press "Deposit LP", confirm the transaction and start earn DANCE token on each trade were made in this trading pair. If you already have any DANCE token reward it will be sent to your wallet.',
+      htmlAttrs: { lang: 'en', amp: true },
+      keywords: 'Swap.Dance, DANCE token, Stake LP Token, proof of trade pool, Swap tokens, Exchange tokens, DEX, AMM',
+    })
     //
     const store = useStore();
     const my_stake = ref("");

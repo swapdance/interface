@@ -20,9 +20,17 @@
 
 <script>
 
+import { useMeta } from 'vue-meta'
+
 export default {
-  name: 'Proof of trade help',
+  name: 'Proof of trade reward help',
   setup() {
+
+    useMeta({
+      title: 'Get Reward : Proof of Trade Help : Swap.Dance', 
+      htmlAttrs: { lang: 'en', amp: true },
+      keywords: 'Swap.Dance, Get Reward, PoT pool, Proof of Trade Pool, Swap tokens, Exchange tokens, DEX, AMM',
+    })
 
     function go_back() {
       history.back();

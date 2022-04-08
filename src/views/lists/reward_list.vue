@@ -51,11 +51,19 @@
 
 import core from "@/core/core";
 import { useStore } from "vuex";
+import { useMeta } from 'vue-meta'
 import { computed, ref } from "vue";
 
 export default {
   name: 'reward list',
   setup() {
+
+    useMeta({
+      title: 'Reward List : Super Pool : Swap.Dance', 
+      description: '',
+      htmlAttrs: { lang: 'en', amp: true },
+      keywords: 'Swap.Dance, Super Pool Reward List, Reward List, Swap tokens, Exchange tokens, DEX, AMM',
+    })
 
     const store = useStore();
     const list_reward = ref([]);

@@ -143,6 +143,7 @@
 
 import { useStore } from "vuex";
 import core from "../core/core";
+import { useMeta } from 'vue-meta'
 const { ethers } = require('ethers');
 import { nFormatter } from "@/helpers/numbers";
 import { ref, computed, watchEffect } from "vue";
@@ -150,6 +151,13 @@ import { ref, computed, watchEffect } from "vue";
 export default {
   name: 'interface',
   setup() {
+
+    useMeta({
+      title: 'Swap.Dance - Proof of Trade AMM : Swap Tokens', 
+      description: 'Swaps are instant. You just connect your metamask wallet, select your ERC20 assets and a token you want to receive. Click and confirm token swap. Once the transaction gets confirmed the funds will be moved to your wallet. You do not have to go through any KYC procedure.',
+      htmlAttrs: { lang: 'en', amp: true },
+      keywords: 'Swap.Dance, DANCE token, Ethereum (ETH), Wrapped Ether (WETH), Chainlink (LINK), Tether (USDT), Shiba Inu (SHIB), Wrapped Bitcoin (WBTC), Matic Token (MATIC), Curve DAO Token (CRV), 0x (ZRX), Maker (MKR), Dai Stablecoin (DAI), USDC, Loopring (LRC), Magic Internet Money, AVAX(MIM), LUNA, REN, Uniswap (UNI), Swap tokens, Exchange tokens, DEX, AMM',
+    })
     
     const store = useStore();
     const block_number = computed(() => store.state.block_num);

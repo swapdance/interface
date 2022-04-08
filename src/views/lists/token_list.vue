@@ -32,12 +32,20 @@
 
 <script>
 
-import { useStore } from "vuex";
 import { computed } from "vue";
+import { useStore } from "vuex";
+import { useMeta } from 'vue-meta'
 
 export default {
   name: 'token list',
   setup() {
+
+    useMeta({
+      title: 'Token List : Swap.Dance', 
+      htmlAttrs: { lang: 'en', amp: true },
+      keywords: 'Swap.Dance, Token List, ERC20 tokens, Swap tokens, Exchange tokens, DEX, AMM',
+    })
+
     const store = useStore();
     const token_list = computed(() => store.state.search_token_list);
     const etherscan_link = computed(() => store.state.etherscan_link);

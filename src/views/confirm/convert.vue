@@ -51,13 +51,20 @@
 </template>
 
 <script>
-import { useStore } from "vuex";
 import { computed } from "vue";
+import { useStore } from "vuex";
+import { useMeta } from 'vue-meta'
 //watchEffect
 export default {
   name: 'convert',
   
   setup() {
+    useMeta({
+      title: 'Confirm Convert: Swap.Dance', 
+      htmlAttrs: { lang: 'en', amp: true },
+      keywords: 'Swap.Dance, Wrap ETH, Unwrap WETH',
+    })
+
     
     const store = useStore();
 

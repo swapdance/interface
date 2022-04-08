@@ -1,5 +1,7 @@
 <template>
   <main>
+    <metainfo>
+    </metainfo>
     <header className='navbar'>
       <div className='container'>
         <div className='logo'><router-link style="text-decoration: none; color: inherit; vertical-align: bottom; margin-top: 0.1rem; " :to="{name: 'Home'}"><mark class="purple"> ⫓ </mark>Swap.Dance</router-link></div>
@@ -54,8 +56,7 @@
             </div>
           </div>
           <p style="margin-top: 0.1rem; margin-bottom: 0.5rem;">Stats</p>
-          <p style="margin-top: 0.1rem; margin-bottom: 0.5rem;">Join</p>
-
+          <router-link style="text-decoration: none; color: inherit;" :to="{name: 'Join To Community'}"><p style="margin-top: 0.1rem; margin-bottom: 0.5rem;">Join</p></router-link>
               
           <router-link style="text-decoration: none; color: inherit;" :to="{name: 'Switch Network'}">
             <button class="network-button">{{current_network_name}}
@@ -71,8 +72,9 @@
     <router-view />
     <footer>
       <div className='container'>
-        <div className='wrapper2app'>
+        <div className='wrapper3app'>
           <p style="text-align: left; color: black;"><router-link style="text-decoration: none; color: inherit;" to="/terms_of_service">Terms of service</router-link></p>
+          <p style="text-align: left; color: black;"><router-link style="text-decoration: none; color: inherit;" to="/privacy_policy">Privacy Policy</router-link></p>
           <p style="text-align: left; color: black;"><router-link style="text-decoration: none; color: inherit;" to="/risks">Risks</router-link></p>
         </div>
         <mark class="purple" style="cursor: pointer;" @click="open_block()"> {{block_number}}</mark>
@@ -163,9 +165,9 @@ export default {
     min-width: 9rem;
   }
 
-  .wrapper2app {
+  .wrapper3app {
     display: grid;
-    grid-template-columns: 0.15fr 0.5fr;
+    grid-template-columns: 0.14fr 0.12fr 0.5fr;
     grid-column-gap: 10px;
     grid-row-gap: 1em;
     width: 100%;

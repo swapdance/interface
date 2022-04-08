@@ -30,11 +30,17 @@
 
 import core from "@/core/core";
 import { useStore } from "vuex";
+import { useMeta } from 'vue-meta'
 import { computed, watchEffect } from "vue";
 
 export default {
-  name: 'pair list',
+  name: 'import token list',
   setup() {
+    useMeta({
+      title: 'Import or Select Token : Swap.Dance', 
+      htmlAttrs: { lang: 'en', amp: true },
+      keywords: 'Swap.Dance, DANCE token, Ethereum (ETH), Wrapped Ether (WETH), Chainlink (LINK), Tether (USDT), Shiba Inu (SHIB), Wrapped Bitcoin (WBTC), Matic Token (MATIC), Curve DAO Token (CRV), 0x (ZRX), Maker (MKR), Dai Stablecoin (DAI), USDC, Loopring (LRC), Magic Internet Money, AVAX(MIM), LUNA, REN, Uniswap (UNI), Swap tokens, Exchange tokens, DEX, AMM',
+    })
     const store = useStore();
     const etherscan_link = computed(() => store.state.etherscan_link);
     const token_list = computed(() => store.state.search_import_list);

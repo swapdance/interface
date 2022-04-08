@@ -22,9 +22,17 @@
 
 <script>
 
+import { useMeta } from 'vue-meta'
+
 export default {
   name: 'super pool help',
   setup() {
+
+    useMeta({
+      title: 'Super Pool Help : Swap.Dance', 
+      htmlAttrs: { lang: 'en', amp: true },
+      keywords: 'Swap.Dance, Super Pool, Lock DANCE token, Unlock DANCE token, Get Reward, Swap tokens, Exchange tokens, DEX, AMM',
+    })
 
     function go_back() {
       history.back();

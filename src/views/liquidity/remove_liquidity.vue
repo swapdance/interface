@@ -120,12 +120,20 @@
 
 import core from "@/core/core";
 import { useStore } from "vuex";
+import { useMeta } from 'vue-meta'
 const { ethers } = require('ethers');
 import { ref, computed, watchEffect } from "vue";
 
 export default {
   name: 'remove liquidity',
   setup() {
+
+    useMeta({
+      title: 'Remove Liquidity : Swap.Dance', 
+      description: 'Choose a trading pair, type an amount of LP token you want to withdraw press "Remove Liquidity", confirm the transaction and receive tokens to your wallet',
+      htmlAttrs: { lang: 'en', amp: true },
+      keywords: 'Swap.Dance, DANCE token, Remove liquidity, liquidity pool, Swap tokens, Exchange tokens, DEX, AMM',
+    })
 
     const store = useStore();
     const my_share = ref("0.0");

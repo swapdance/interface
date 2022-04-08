@@ -25,6 +25,7 @@ import RewardList from "@/views/lists/reward_list.vue";
 import NewPoTList from "@/views/lists/new_pot_list.vue";
 import ProofOfTradeList from "@/views/lists/pot_list.vue";
 // help
+import JoinToCommunity from "@/views/info/join.vue";
 import NewPoTHelp from "@/views/info/new_pot_help.vue";
 import NewPairHelp from "@/views/info/new_pair_help.vue";
 import PoTHelp from "@/views/info/proof_of_trade_help.vue";
@@ -47,6 +48,7 @@ import ConfirmSuperWithReward from "@/views/confirm/unlock_super_with_reward.vue
 import ConfirmSuperWithoutReward from "@/views/confirm/unlock_super_without_reward.vue";
 // footer
 import Risks from "@/views/info/risks.vue";
+import PrivacyPolicy from "@/views/info/privacy_policy.vue";
 import TermsOfService from "@/views/info/terms_of_service.vue";
 
 const routes = [
@@ -74,6 +76,16 @@ const routes = [
     path: "/risks",
     name: "Risks",
     component: Risks,
+  },
+  {
+    path: "/join",
+    name: "Join To Community",
+    component: JoinToCommunity,
+  },
+  {
+    path: "/privacy_policy",
+    name: "Privacy Policy",
+    component: PrivacyPolicy,
   },
   {
     path: "/terms_of_service",

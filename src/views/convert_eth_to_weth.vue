@@ -111,11 +111,19 @@
 
 import { useStore } from "vuex";
 import core from "../core/core";
+import { useMeta } from 'vue-meta'
 import { computed, watchEffect, ref } from "vue";
 
 export default {
   name: 'convert eth to weth',
   setup() {
+    
+    useMeta({
+      title: 'Convert ETH to WETH : Wrap / Unwrap : Swap.Dance', 
+      description: 'If you have ETH, you can wrap it and get ETH by simply converting ETH to WETH. Or if you want to get back your ETH just unwrap WETH to ETH.',
+      htmlAttrs: { lang: 'en', amp: true },
+      keywords: 'Wrapped Ether (WETH), ETHEREUM, Convert, Wrap, Unwrap',
+    })
     
     const store = useStore();
     const token_price1 = ref("1.0");

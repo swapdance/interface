@@ -64,12 +64,19 @@
 
 <script>
 import { useStore } from "vuex";
+import { useMeta } from 'vue-meta'
 import { computed, ref } from "vue";
 //watchEffect
 export default {
-  name: 'confirm new liquidity',
+  name: 'confirm new liquidity pool',
   setup() {
     
+    useMeta({
+      title: 'Confirm New Liquidity Pool: Swap.Dance', 
+      htmlAttrs: { lang: 'en', amp: true },
+      keywords: 'Swap.Dance, Liquidity Pool, token pair',
+    })
+
     const store = useStore();
     const title = ref("New Pair");
     // confirm info

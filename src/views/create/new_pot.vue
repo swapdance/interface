@@ -95,12 +95,21 @@
 </template>
 
 <script>
-import { useStore } from "vuex";
-import { computed } from "vue";
 import core from "@/core/core";
+import { computed } from "vue";
+import { useStore } from "vuex";
+import { useMeta } from 'vue-meta'
 export default {
   name: 'new pool',
   setup() {
+    
+    useMeta({
+      title: 'Create a New Proof of Trade Pool : Swap.Dance', 
+      description: 'Choose a trading pair, press "Create a new PoT Pool", confirm the transaction and start earn DANCE token on each trade were made in this trading pair.',
+      htmlAttrs: { lang: 'en', amp: true },
+      keywords: 'Swap.Dance, DANCE token, new PoT, new proof of trade pool, Proof of Trade, Swap tokens, Exchange tokens, DEX, AMM',
+    })
+
     const store = useStore();
     const connect_button = computed(() => store.state.connect_button_create_new_pot);
     const pot_station_list = computed(() => store.state.search_new_pot_list);

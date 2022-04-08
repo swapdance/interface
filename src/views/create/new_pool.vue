@@ -140,12 +140,19 @@
 </template>
 
 <script>
-import { useStore } from "vuex";
 import core from "@/core/core";
+import { useStore } from "vuex";
+import { useMeta } from 'vue-meta'
 import { ref, computed, watchEffect } from "vue";
 export default {
   name: 'new pool',
   setup() {
+    useMeta({
+      title: 'Create a New Liquidity Pool : Swap.Dance', 
+      description: 'Choose ERC20 tokens that will form a trading pair, press "Create a new pair", confirm the transaction and start earn on liquidity mining',
+      htmlAttrs: { lang: 'en', amp: true },
+      keywords: 'Swap.Dance, DANCE token, New liquidity, liquidity pool, new pair, new pool, new token pool, Swap tokens, Exchange tokens, DEX, AMM',
+    })
     const store = useStore();
     const fees = ref("");
     const market = ref("SELECT MARKET");

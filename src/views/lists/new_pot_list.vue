@@ -31,12 +31,19 @@
 
 <script>
 
-import { useStore } from "vuex";
 import { computed } from "vue";
+import { useStore } from "vuex";
+import { useMeta } from 'vue-meta'
 
 export default {
-  name: 'pair list',
+  name: 'new pot list',
   setup() {
+
+    useMeta({
+      title: 'New Proof of Trade Pool List: Swap.Dance', 
+      htmlAttrs: { lang: 'en', amp: true },
+      keywords: 'Swap.Dance, Proof of Trade Pool, PoT Pool, Swap tokens, Exchange tokens, DEX, AMM',
+    })
 
     const store = useStore();
     const etherscan_link = computed(() => store.state.etherscan_link);

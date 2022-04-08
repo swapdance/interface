@@ -21,9 +21,17 @@
 
 <script>
 
+import { useMeta } from 'vue-meta'
+
 export default {
   name: 'new pair help',
   setup() {
+
+    useMeta({
+      title: 'Create New Pair Help : Swap.Dance', 
+      htmlAttrs: { lang: 'en', amp: true },
+      keywords: 'Swap.Dance, Token Pair, New Pool, Create New Pair, New Liquidity Pool, Swap tokens, Exchange tokens, DEX, AMM',
+    })
 
     function go_back() {
       history.back();

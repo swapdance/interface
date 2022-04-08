@@ -88,12 +88,19 @@
 
 <script>
 import { useStore } from "vuex";
+import { useMeta } from 'vue-meta'
 import { computed, ref } from "vue";
 //watchEffect
 export default {
   name: 'lock funds / super pool',
   setup() {
-    // to do! if user has non zero amount, then we should show the reward?
+
+    useMeta({
+      title: 'Lock DANCE token: Swap.Dance', 
+      htmlAttrs: { lang: 'en', amp: true },
+      keywords: 'Swap.Dance, DANCE token, Super Pool, Lock DANCE token',
+    })
+    
     const store = useStore();
     const title = ref("Lock Funds");
     // hash info

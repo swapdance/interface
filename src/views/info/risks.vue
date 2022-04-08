@@ -20,9 +20,17 @@
 
 <script>
 
+import { useMeta } from 'vue-meta'
+
 export default {
   name: 'risks',
   setup() {
+
+    useMeta({
+      title: 'Risks : Swap.Dance', 
+      htmlAttrs: { lang: 'en', amp: true },
+      keywords: 'Swap.Dance, DANCE token, Trading Risks, Risks, Smart Contract Risks, Swap tokens, Exchange tokens, DEX, AMM',
+    })
 
     function go_back() {
       history.back();

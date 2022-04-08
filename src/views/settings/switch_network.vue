@@ -74,11 +74,19 @@
 
 import core from "@/core/core";
 import { useStore } from "vuex";
+import { useMeta } from 'vue-meta'
 import { computed, ref, watchEffect } from "vue";
 
 export default {
   name: 'Switch Network',
   setup() {
+
+    useMeta({
+      title: 'Switch Network : Swap.Dance', 
+      htmlAttrs: { lang: 'en', amp: true },
+      keywords: 'Swap.Dance, Swap.Dance Switch Network, Switch Network to Mainnet, Switch Network to Testnet, Rinkeby, Goerli, Swap tokens, Exchange tokens, DEX, AMM',
+    })
+
     const store = useStore();
 
     const goerli_button = ref("Switch");

@@ -99,6 +99,7 @@
 
 import core from "@/core/core";
 import { useStore } from "vuex";
+import { useMeta } from 'vue-meta'
 import { nFormatter } from "@/helpers/numbers";
 import { ref, computed, watchEffect } from "vue";
 //  to do
@@ -107,6 +108,13 @@ import { ref, computed, watchEffect } from "vue";
 export default {
   name: 'Super Pool Claim Funds',
   setup() {
+
+    useMeta({
+      title: 'Unlock DANCE Token and Claim Funds : Super Pool : Swap.Dance', 
+      description: '',
+      htmlAttrs: { lang: 'en', amp: true },
+      keywords: 'Swap.Dance, DANCE token, Super Pool, Unlock DANCE token, Claim Funds and Reward, Swap tokens, Exchange tokens, DEX, AMM',
+    })
     //
     const store = useStore();
     

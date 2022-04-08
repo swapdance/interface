@@ -94,11 +94,20 @@
 <script>
 import core from "@/core/core";
 import { useStore } from "vuex";
+import { useMeta } from 'vue-meta'
 import { ref, computed, watchEffect } from "vue";
 
 export default {
   name: 'get reward',
   setup() {
+
+    useMeta({
+      title: 'Get DANCE token Reward : Swap.Dance', 
+      description: 'Choose a proof of trade pool where you stake your LP token, press "Withdraw Reward", confirm the transaction and receive DANCE token to your wallet',
+      htmlAttrs: { lang: 'en', amp: true },
+      keywords: 'Swap.Dance, DANCE token, get reward, DANCE token reward, proof of trade pool, Swap tokens, Exchange tokens, DEX, AMM',
+    })
+
     const store = useStore();
     const round_reward = ref("");
     const available_reward = ref("");

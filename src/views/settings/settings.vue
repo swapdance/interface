@@ -64,12 +64,19 @@
 
 <script>
 import { useStore } from "vuex";
+import { useMeta } from 'vue-meta'
 import { computed, ref, watchEffect } from "vue";
 //watchEffect
 export default {
   name: 'Settings',
   setup() {
     
+    useMeta({
+      title: 'Settings : Swap.Dance', 
+      htmlAttrs: { lang: 'en', amp: true },
+      keywords: 'Swap.Dance, Swap.Dance Settings, Swap Settings, Liquidity Settings, Swap tokens, Exchange tokens, DEX, AMM',
+    })
+
     const store = useStore();
     const slippage_liq = ref("");
     const slippage_swap = ref("");

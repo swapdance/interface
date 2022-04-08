@@ -53,12 +53,19 @@
 
 <script>
 import { useStore } from "vuex";
+import { useMeta } from 'vue-meta'
 import { computed, ref } from "vue";
 //watchEffect
 export default {
   name: 'get reward',
   setup() {
-    // to do! if user has non zero amount, then we should show the reward?
+
+    useMeta({
+      title: 'Confirm DANCE token Reward: Swap.Dance', 
+      htmlAttrs: { lang: 'en', amp: true },
+      keywords: 'Swap.Dance, DANCE token reward, DANCE token, reward',
+    })
+    
     const store = useStore();
     const title = ref("Get DANCE");
 

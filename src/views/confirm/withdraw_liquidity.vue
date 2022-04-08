@@ -92,11 +92,18 @@
 
 <script>
 import { useStore } from "vuex";
+import { useMeta } from 'vue-meta'
 import { computed, ref } from "vue";
 //watchEffect
 export default {
   name: 'confirm remove liquidity',
   setup() {
+    
+    useMeta({
+      title: 'Confirm Remove Liquidity: Swap.Dance', 
+      htmlAttrs: { lang: 'en', amp: true },
+      keywords: 'Swap.Dance, Liquidity, Remove Liquidity',
+    })
     
     const store = useStore();
     const liquidity_title = ref("");

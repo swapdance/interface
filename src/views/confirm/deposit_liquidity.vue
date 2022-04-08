@@ -122,12 +122,19 @@
 
 <script>
 import { useStore } from "vuex";
+import { useMeta } from 'vue-meta'
 import { computed, ref } from "vue";
 //watchEffect
 export default {
   name: 'confirm new liquidity',
   setup() {
     
+    useMeta({
+      title: 'Confirm Deposit Liquidity: Swap.Dance', 
+      htmlAttrs: { lang: 'en', amp: true },
+      keywords: 'Swap.Dance, LP Token, Liquidity Pool, deposit tokens',
+    })
+
     const store = useStore();
     const liquidity_title = ref("");
     const liquidity_page = computed(() => store.state.liquidity_page);

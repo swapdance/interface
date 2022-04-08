@@ -179,6 +179,7 @@
 
 import core from "@/core/core";
 import { useStore } from "vuex";
+import { useMeta } from 'vue-meta'
 const { ethers } = require('ethers'); // BigNumber
 import { ENumber } from "@/helpers/numbers";
 import { ref, computed, watchEffect } from "vue";
@@ -186,6 +187,12 @@ import { ref, computed, watchEffect } from "vue";
 export default {
   name: 'add liquidity',
   setup() {
+    useMeta({
+      title: 'Provide Liquidity : Swap.Dance', 
+      description: 'Choose a trading pair, type an amount you want to deposit press "Deposit Liquidity", confirm the transaction and start earn on liquidity mining',
+      htmlAttrs: { lang: 'en', amp: true },
+      keywords: 'Swap.Dance, DANCE token, New liquidity, liquidity pool, Swap tokens, Exchange tokens, DEX, AMM',
+    })
     const store = useStore();
     const pool_type = ref("");
     const my_share = ref("0.0");

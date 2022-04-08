@@ -58,6 +58,7 @@
 
 <script>
 import { useStore } from "vuex";
+import { useMeta } from 'vue-meta'
 import { computed, ref } from "vue";
 //watchEffect
 export default {
@@ -65,6 +66,12 @@ export default {
   // to do, show reward if it is.
   // burn fees
   setup() {
+    
+    useMeta({
+      title: 'Confirm Unlock DANCE token With Reward: Swap.Dance', 
+      htmlAttrs: { lang: 'en', amp: true },
+      keywords: 'Swap.Dance, Unlock DANCE token, Unlock DANCE token With Reward',
+    })
     
     const store = useStore();
     const title = ref("Unstake & Get Reward");

@@ -96,11 +96,20 @@
 <script>
 import core from "@/core/core";
 import { useStore } from "vuex";
+import { useMeta } from 'vue-meta'
 import { nFormatter } from "@/helpers/numbers";
 import { ref, computed, watchEffect } from "vue";
 export default {
   name: 'proof of trade',
   setup() {
+
+    useMeta({
+      title: 'Unstake LP Token : Proof of Trade : Swap.Dance', 
+      description: 'Choose a proof of trade pool where you stake your LP token, press "Withdraw LP", confirm the transaction and receive LP token to your wallet. If you have any DANCE token reward it also will be sent to your wallet.',
+      htmlAttrs: { lang: 'en', amp: true },
+      keywords: 'Swap.Dance, DANCE token, Unstake, proof of trade pool, Swap tokens, Exchange tokens, DEX, AMM',
+    })
+
     const store = useStore();
 
     const my_stake = ref("");

@@ -56,12 +56,19 @@
 
 <script>
 import { useStore } from "vuex";
+import { useMeta } from 'vue-meta'
 import { computed, ref } from "vue";
 //watchEffect
 export default {
   name: 'withdraw pot lp',
   
   setup() {
+
+    useMeta({
+      title: 'Confirm Withdraw LP Token: Swap.Dance', 
+      htmlAttrs: { lang: 'en', amp: true },
+      keywords: 'Swap.Dance, LP Token, Proof of trade',
+    })
     
     const store = useStore();
     const title = ref("PoT Withdraw");

@@ -56,12 +56,19 @@
 
 <script>
 import { useStore } from "vuex";
+import { useMeta } from 'vue-meta'
 import { computed, ref } from "vue";
 //watchEffect
 export default {
   name: 'withdraw dance without reward',
   // to do, show reward if it is.
   setup() {
+    
+    useMeta({
+      title: 'Confirm Withdraw DANCE token Without Reward: Swap.Dance', 
+      htmlAttrs: { lang: 'en', amp: true },
+      keywords: 'Swap.Dance, DANCE token, Super Pool Withdraw Without Reward, Unlock DANCE token',
+    })
     
     const store = useStore();
     const title = ref("Unstake Super Pool");

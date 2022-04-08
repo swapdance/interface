@@ -112,6 +112,7 @@
 
 import core from "@/core/core";
 import { useStore } from "vuex";
+import { useMeta } from 'vue-meta'
 const { ethers } = require('ethers');
 import { nFormatter } from "@/helpers/numbers";
 import { ref, computed, watchEffect } from "vue";
@@ -119,6 +120,13 @@ import { ref, computed, watchEffect } from "vue";
 export default {
   name: 'Super Pool',
   setup() {
+
+    useMeta({
+      title: 'Lock DANCE Token : Super Pool : Swap.Dance', 
+      description: '',
+      htmlAttrs: { lang: 'en', amp: true },
+      keywords: 'Swap.Dance, DANCE token, Super Pool, Lock DANCE token, Swap tokens, Exchange tokens, DEX, AMM',
+    })
     //
     const store = useStore();
     const forming = ref("");
