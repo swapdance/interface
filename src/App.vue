@@ -73,8 +73,6 @@
     <footer>
       <div className='container'>
         <div className='wrapper3app'>
-          <p style="text-align: left; color: black;"><router-link style="text-decoration: none; color: inherit;" to="/terms_of_service">Terms of service</router-link></p>
-          <p style="text-align: left; color: black;"><router-link style="text-decoration: none; color: inherit;" to="/privacy_policy">Privacy Policy</router-link></p>
           <p style="text-align: left; color: black;"><router-link style="text-decoration: none; color: inherit;" to="/risks">Risks</router-link></p>
         </div>
         <mark class="purple" style="cursor: pointer;" @click="open_block()"> {{block_number}}</mark>

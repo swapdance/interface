@@ -11,6 +11,8 @@
           <div className='simple-card' style="background: white">
             <h4 style="text-align: left; margin-bottom: 1rem;">Risks</h4>
             <p style="text-align: start;">Some words here</p>
+            <p style="text-align: left; color: black;"><router-link style="text-decoration: none; color: inherit;" to="/terms_of_service">Terms of service</router-link></p>
+            <p style="text-align: left; color: black;"><router-link style="text-decoration: none; color: inherit;" to="/privacy_policy">Privacy Policy</router-link></p>
           </div>
           <hr class="solid">
         </div>
