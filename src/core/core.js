@@ -313,15 +313,14 @@ export default {
         }
     },
     async connect_wallet() {
-        if (is_signer == true) {
 
-            const user_address = await signer.getAddress();
-            const user_balance = await signer.getBalance();
-            const user_network = (await provider.getNetwork()).chainId;
+        const user_address = await signer.getAddress();
+        const user_balance = await signer.getBalance();
+        const user_network = (await provider.getNetwork()).chainId;
 
-            is_signer = true;
-            return {user_address: user_address, user_balance: user_balance, user_network: user_network};
-        }
+        is_signer = true;
+        return {user_address: user_address, user_balance: user_balance, user_network: user_network};
+
     },
     async get_liquidity_user_balance(token1, token2, decimal1, decimal2) {
 
