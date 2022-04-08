@@ -56,6 +56,7 @@ export default {
                 console.log(error);
                 is_signer = false; // set false if signer is inactive
             });
+            
             if (Number(chain_id) == 1){
                 console.log("Set eth mainnet contracts from env");
                 dance_addr = process.env.VUE_APP_MAINNET_DANCE_ADDR;
