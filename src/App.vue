@@ -86,12 +86,17 @@
 <script>
 
 import { computed } from "vue";
-import { useStore } from "vuex";
 import core from "./core/core";
+import { useStore } from "vuex";
+import { useMeta } from 'vue-meta'
 
 export default {
   name: 'App',
   setup() {
+
+    useMeta({
+      icon: '@/assets/favicon.ico', 
+    })
 
     const store = useStore();
     const block_number = computed(() => store.state.block_num);
