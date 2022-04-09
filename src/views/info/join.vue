@@ -6,11 +6,26 @@
             <h3 style="text-align: left; cursor: pointer;" @click="go_back()"><mark class="purple">⫹ </mark>Back</h3>
             <h3 style="text-align: right;"><mark class="purple"> ℹ </mark>Join</h3>
           </div>
-          <hr class="solid" style="margin-bottom: 1rem;">
+          <hr class="solid" style="margin-bottom: 1rem; ">
           
-          <div className='simple-card' style="background: white">
-            <h4 style="text-align: left; margin-bottom: 1rem;">Join To Community</h4>
-            <p style="text-align: start;">Some words here</p>
+          <div className='simple-card' style="background: white; line-height: 2;">
+            <h4 style="text-align: left;">Join To Community</h4>
+
+             <div className='wrapper2inline'>
+                <p style="text-align: start;">Discord:</p>
+                <a href="http://discord.gg/GSVZurABjd">http://discord.gg/GSVZurABjd</a>
+            </div>
+
+            <div className='wrapper2inline'>
+              <p style="text-align: start;">Twitter:</p>
+              <a href="https://twitter.com/SwapDance">https://twitter.com/SwapDance</a>
+            </div>
+          
+            <div className='wrapper2inline'>
+              <p style="text-align: start;">Owner:</p>
+              <a href="https://twitter.com/SwapOperator">https://twitter.com/SwapOperator</a>
+            </div>
+
           </div>
           <hr class="solid">
         </div>

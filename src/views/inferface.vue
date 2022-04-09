@@ -98,8 +98,8 @@
               <p style="text-align: right;">Balance {{nFormatter(user_balance2).toString().substring(0, 12)}}</p>
             </div>
           </div>
-
-          <div className='wrapper3inline' style="margin-bottom: 0.3rem;">
+          <hr class="solid" style="margin-bottom: 1rem;">
+          <div className='wrapper3inline' >
             <p style="text-align: left; width: 100%;"><mark class="purple">Slippage</mark></p>
             <p class="to-main"></p>
             <p style="text-align: right; cursor: pointer;">
