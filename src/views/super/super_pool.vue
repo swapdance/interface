@@ -123,7 +123,7 @@ export default {
 
     useMeta({
       title: 'Lock DANCE Token : Super Pool : Swap.Dance', 
-      description: '',
+      description: 'Lock your DANCE token to claim reward. Super pool has two phase, LP-Forming and LP-Distribution. In the first stage you can lock your DANCE token reward to receive a set of 10 LP on your choice when the super pool will change status to LP-Distribution.',
       htmlAttrs: { lang: 'en', amp: true },
       keywords: 'Swap.Dance, DANCE token, Super Pool, Lock DANCE token, Swap tokens, Exchange tokens, DEX, AMM',
     })

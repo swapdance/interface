@@ -111,7 +111,7 @@ export default {
 
     useMeta({
       title: 'Unlock DANCE Token and Claim Funds : Super Pool : Swap.Dance', 
-      description: '',
+      description: 'Unlock your DANCE token to claim reward. Super pool has two phase, LP-Forming and LP-Distribution. In the first stage you can lock your DANCE token reward to receive a set of 10 LP on your choice when the super pool will change status to LP-Distribution.',
       htmlAttrs: { lang: 'en', amp: true },
       keywords: 'Swap.Dance, DANCE token, Super Pool, Unlock DANCE token, Claim Funds and Reward, Swap tokens, Exchange tokens, DEX, AMM',
     })

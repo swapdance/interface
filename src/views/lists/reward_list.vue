@@ -60,7 +60,7 @@ export default {
 
     useMeta({
       title: 'Reward List : Super Pool : Swap.Dance', 
-      description: '',
+      description: 'Type an amount of DANCE token you want to lock then select a set of 10 LP tokens on your choice to receive estimate reward you can to withdraw at LP-Distribution cycle.',
       htmlAttrs: { lang: 'en', amp: true },
       keywords: 'Swap.Dance, Super Pool Reward List, Reward List, Swap tokens, Exchange tokens, DEX, AMM',
     })
