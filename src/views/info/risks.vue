@@ -10,7 +10,7 @@
           
           <div className='simple-card' style="background: white">
             <h4 style="text-align: left; margin-bottom: 1rem;">Risks</h4>
-            <div className='wrapper2inline' style="margin-top: 1rem; grid-template-columns: 1.5fr 1.5fr;">
+            <div className='wrapper2inline' style="margin-bottom: 1rem; grid-template-columns: 1.5fr 1.5fr;">
               <p style="text-align: left; color: black;"><router-link style="text-decoration: none; color: inherit;" to="/terms_of_service"><strong>Terms of service</strong></router-link></p>
               <p style="text-align: right; color: black;"><router-link style="text-decoration: none; color: inherit;" to="/privacy_policy"><strong>Privacy Policy</strong></router-link></p>
             </div>
