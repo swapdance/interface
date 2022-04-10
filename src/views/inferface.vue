@@ -212,7 +212,11 @@ export default {
     function use_max_balance() {
       // user lp balance
       if (wrapped_addr.value == token_address1.value[0] && network_coin_symbol.value == token_symbol1.value) {
-        token_price1.value = user_balance1.value - 0.001;
+        if (user_balance1.value > 0.001) {
+          token_price1.value = user_balance1.value - 0.001;
+        } else {
+          token_price1.value = user_balance1.value;
+        }
       } else {
         token_price1.value = user_balance1.value;
       }

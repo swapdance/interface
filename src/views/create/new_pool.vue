@@ -128,6 +128,10 @@
               <p style="text-align: left;">Error</p>
               <p style="text-align: right; color: rgb(223, 49, 49);">Select token 2</p>
             </div>
+            <div v-if="same_tokens == true" className='wrapper2inline' style="margin-top: 1rem;">
+              <p style="text-align: left;">Error</p>
+              <p style="text-align: right; color: rgb(223, 49, 49);">Token 1 is same as Token 2</p>
+            </div>
             <div v-if="pair_exist == true" className='wrapper2inline' style="margin-top: 1rem;">
               <p style="text-align: left;">Error</p>
               <p style="text-align: right; color: rgb(223, 49, 49);">Pair already exist</p>
@@ -163,6 +167,7 @@ export default {
     const empty_type = ref(false);
     const empty_token1 = ref(false);
     const empty_token2 = ref(false);
+    const same_tokens = ref(false);
 
     const internal_future_pot_pool = ref(false);
     const fees_in_block = ref("Min 0.01 Max 0.99");
@@ -223,9 +228,10 @@ export default {
       market,
       set_fee,
       open_addr,
-      pair_exist,
       empty_fees,
       empty_type,
+      pair_exist,
+      same_tokens,
       empty_token1,
       empty_token2,
       token_name1,
@@ -288,7 +294,8 @@ export default {
         } else if (market_type == 1) {
           market_type = 0;
         }
-        
+
+        this.same_tokens = false;
         this.pair_exist = false;
         this.empty_token2 = false;
         this.empty_type = false;
@@ -298,6 +305,7 @@ export default {
         if (token1.length == 42 && token2.length == 42) {
           await core.check_pair_exist(token1, token2);
         }
+        
         let check_market_error = Number(this.$store.state.market_type);
         if (this.fees == "") {
           this.empty_fees = true;
@@ -327,8 +335,17 @@ export default {
           this.empty_token1 = false;
           this.empty_token2 = false;
 
-        } else {
+        }  else if (token1 == token2) {
 
+          this.same_tokens = true;
+          this.pair_exist = false;
+          this.empty_type = false;
+          this.empty_fees = false;
+          this.empty_token1 = false;
+          this.empty_token2 = false;
+
+        } else {
+          this.same_tokens = false;
           this.pair_exist = false;
           this.empty_token2 = false;
           this.empty_type = false;
