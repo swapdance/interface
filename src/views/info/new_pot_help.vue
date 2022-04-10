@@ -10,8 +10,8 @@
           
           <div className='simple-card' style="background: white">
             <h4 style="text-align: left; margin-bottom: 1rem;">New Proof of Trade Pool</h4>
-            <p style="text-align: start; line-height: 2;">Every participant can deploy a new Proof of Trade pool for a pair that has at least one approved token. Initial list of approved tokens : <strong>WBTC, WETH, DAI, USDT, USDC, MIM</strong> (check the list here). </p>
-            <p style="text-align: start; line-height: 2;">For instance, liqiudity provider decide to create the new pool <strong>WBTC - LINK</strong>. After deploying, anyone can initialize <strong>xDxWBTCxLINK</strong> PoT pool for the new existed pair to start mint <mark class="purple"> DANCE </mark> reward for every trade made in this pair. The pair DANCE - LINK wouldn't have an access to deploy PoT pool. </p>
+            <p style="text-align: start; line-height: 2; margin-bottom: 1rem;">Every participant can deploy a new Proof of Trade pool for a pair that has at least one approved token. Initial list of approved tokens : <strong>WBTC, WETH, DAI, USDT, USDC, MIM</strong> (check the list here). </p>
+            <p style="text-align: start; line-height: 2; margin-bottom: 1rem;">For instance, liqiudity provider decide to create the new pool <strong>WBTC - LINK</strong>. After deploying, anyone can initialize <strong>xDxWBTCxLINK</strong> PoT pool for the new existed pair to start mint <mark class="purple"> DANCE </mark> reward for every trade made in this pair. The pair DANCE - LINK wouldn't have an access to deploy PoT pool. </p>
             <p style="text-align: start; line-height: 2;">Visit our <strong>Discord</strong> to make a new suggestions to the list.</p>
           </div> 
           

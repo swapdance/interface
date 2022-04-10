@@ -10,8 +10,8 @@
           
           <div className='simple-card' style="background: white">
             <h4 style="text-align: left; margin-bottom: 1rem;">New Pair</h4>
-            <p style="text-align: start; line-height: 2;">The new pair creation requires having two ERC20 tokens in your wallet and a little bit ETH to cover the gas fees. By adding new pair you need to select a market type and set trading fees.</p>
-            <p style="text-align: start; line-height: 2;">Market type means how the price will formed. Stable market with a fixed price will provide currency exchange at a rate close to 1. Dynamic market is more flexible and the price will depend on the mood of traders.</p>
+            <p style="text-align: start; line-height: 2; margin-bottom: 1rem;">The new pair creation requires having two ERC20 tokens in your wallet and a little bit ETH to cover the gas fees. By adding new pair you need to select a market type and set trading fees.</p>
+            <p style="text-align: start; line-height: 2; margin-bottom: 1rem;">Market type means how the price will formed. Stable market with a fixed price will provide currency exchange at a rate close to 1. Dynamic market is more flexible and the price will depend on the mood of traders.</p>
             <p style="text-align: start; line-height: 2;">Also you can find "Future PoT Pool", if this field is "Available", that means you can deploy the <router-link to="/terms_of_service">new Proof of Trade pool</router-link> for the current pair to start stake LP tokens and earn DANCE token. DANCE token you can use as utility token in the Super Pool to receive a set of 10 LP tokens traded on the market. </p>
           </div>
           <hr class="solid">
