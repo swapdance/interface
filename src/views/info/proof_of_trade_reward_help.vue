@@ -10,7 +10,8 @@
           
           <div className='simple-card' style="background: white">
             <h4 style="text-align: left; margin-bottom: 1rem;">Proof of Trade Reward</h4>
-            <p style="text-align: start; line-height: 2;">PoT pool has two types of reward. <strong>"Round"</strong> is the lastest minted reward but not available for withdrawn. <strong>"Available"</strong> reward is calculated when participants stake or unstake LP tokens, at this moment "Round" reward becomes "Available".</p>          </div> 
+            <p style="text-align: start; line-height: 2;">PoT pool has two types of reward. <strong>"Round"</strong> is the lastest minted reward but not available for withdrawn. <strong>"Available"</strong> reward is calculated when participants stake or unstake LP tokens, at this moment "Round" reward becomes "Available".</p>
+          </div> 
           
           <hr class="solid">
         </div>

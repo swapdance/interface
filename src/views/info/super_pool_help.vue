@@ -10,8 +10,8 @@
           
           <div className='simple-card' style="background: white">
             <h4 style="text-align: left; margin-bottom: 1rem;">Super Pool</h4>
-            <p style="margin-bottom: 1rem; text-align: start; line-height: 2;"><strong>LP-forming</strong> is a period when significant LPs accumulations take place and <mark class="purple"> DANCE </mark> token economic value are forming.</p>
-            <p style="margin-bottom: 1rem; text-align: start; line-height: 2;"><strong>LP-distribution</strong> is a period when recipient can choose at on own discretion ten different LPs and withdrawal them proportional to the number of user locked <mark class="purple"> DANCE </mark> token to Super Pool <mark class="purple"> DANCE </mark> units amount.</p>
+            <p style="text-align: start; line-height: 2;"><strong>LP-forming</strong> is a period when significant LPs accumulations take place and <mark class="purple"> DANCE </mark> token economic value are forming.</p>
+            <p style="text-align: start; line-height: 2;"><strong>LP-distribution</strong> is a period when recipient can choose at on own discretion ten different LPs and withdrawal them proportional to the number of user locked <mark class="purple"> DANCE </mark> token to Super Pool <mark class="purple"> DANCE </mark> units amount.</p>
             <p style="text-align: start; line-height: 2;"><strong>The burn rate</strong> is a specific algorithm that allow avoid hyperinflation of <mark class="purple"> DANCE </mark> economic. An increase of one percent each distribution period balances the ratio of new minted tokens to the total supply.</p>
           </div>
           <hr class="solid">

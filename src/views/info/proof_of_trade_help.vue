@@ -10,7 +10,7 @@
           
           <div className='simple-card' style="background: white">
             <h4 style="text-align: left; margin-bottom: 1rem;">Proof of Trade - Stake / Unstake</h4>
-            <p style="margin-bottom: 1rem; text-align: start; line-height: 2;"><strong>Staking </strong>allows participants to earn <mark class="purple"> DANCE </mark> rewards on their LP holdings. Cumulative amount of <mark class="purple"> DANCE </mark> rewards are distributed evenly among all stakers depending on amount of their LP tokens.</p>
+            <p style="text-align: start; line-height: 2;"><strong>Staking </strong>allows participants to earn <mark class="purple"> DANCE </mark> rewards on their LP holdings. Cumulative amount of <mark class="purple"> DANCE </mark> rewards are distributed evenly among all stakers depending on amount of their LP tokens.</p>
             <p style="text-align: start; line-height: 2;">Participants can easily <strong>unstake</strong> their LP tokens in any time. PoT pool does not charge any commissions. Also "available" and "round" reward will be withdrawn to a wallet with LP tokens.</p>
           </div> 
           

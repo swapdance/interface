@@ -10,17 +10,17 @@
           
           <div className='simple-card' style="background: white">
             <h3 style="text-align: left; margin-bottom: 1rem;">Terms of service</h3>
-            <p style="margin-bottom: 1rem; text-align: start;">These terms and conditions outline the rules and regulations for the use of Swap.Dance's Website, located at <router-link to="/">https://swap.dance</router-link>.</p>
-            <p style="margin-bottom: 1rem; text-align: start;">By accessing this website we assume you accept these terms and conditions. Do not continue to use Swap.Dance if you do not agree to take all of the terms and conditions stated on this page.</p>
+            <p style="text-align: start;">These terms and conditions outline the rules and regulations for the use of Swap.Dance's Website, located at <router-link to="/">https://swap.dance</router-link>.</p>
+            <p style="text-align: start;">By accessing this website we assume you accept these terms and conditions. Do not continue to use Swap.Dance if you do not agree to take all of the terms and conditions stated on this page.</p>
             <h4 style="text-align: left; margin-bottom: 1rem;">Cookies</h4>
-            <p style="margin-bottom: 1rem; text-align: start;">We are not using cookies on our website!</p>
+            <p style="text-align: start;">We are not using cookies on our website!</p>
             <h4 style="text-align: left; margin-bottom: 1rem;">License</h4>
-            <p style="margin-bottom: 1rem; text-align: start;">Unless otherwise stated, Swap.Dance and/or its licensors own the intellectual property rights for all material on Swap.Dance. All intellectual property rights are reserved. You may access this from Swap.Dance for your own personal use subjected to restrictions set in these terms and conditions.</p>
-            <p style="margin-bottom: 1rem; text-align: start;"><strong>You must not:</strong></p>
-            <p style="margin-bottom: 1rem; text-align: start;"> - Convert or swap stolen funds.</p>
-            <p style="margin-bottom: 1rem; text-align: start;"> - Create pair with scam ERC20 asset.</p>
+            <p style="text-align: start;">Unless otherwise stated, Swap.Dance and/or its licensors own the intellectual property rights for all material on Swap.Dance. All intellectual property rights are reserved. You may access this from Swap.Dance for your own personal use subjected to restrictions set in these terms and conditions.</p>
+            <p style="text-align: start;"><strong>You must not:</strong></p>
+            <p style="text-align: start;"> - Convert or swap stolen funds.</p>
+            <p style="text-align: start;"> - Create pair with scam ERC20 asset.</p>
             <h4 style="text-align: left; margin-bottom: 1rem;">Your Privacy</h4>
-            <p style="margin-bottom: 1rem; text-align: start;">Please read <router-link to="/privacy_policy">Privacy Policy</router-link></p>
+            <p style="text-align: start;">Please read <router-link to="/privacy_policy">Privacy Policy</router-link></p>
             <h4 style="text-align: left; margin-bottom: 1rem;">Disclaimer</h4>
             <p style="text-align: start;">As long as the website (include smart contracts) and the information and services on the website are provided free of charge, we will not be liable for any loss or damage of any nature.</p>
           </div>
