@@ -15,7 +15,7 @@
               <p style="text-align: right; color: black;"><router-link style="text-decoration: none; color: inherit;" to="/privacy_policy"><strong>Privacy Policy</strong></router-link></p>
             </div>
             <p style="text-align: start; margin-bottom: 1rem;">Warning! This project is in beta, the contracts are not audited yet and users are expected to use the protocol at their own risks.</p>
-            <p style="text-align: start; margin-bottom: 1rem;">Swap.Dance smart contracts is immutable and not upgradeable. That guarantees that any funds you put into a contract will only be used according to that contract's code.</p>
+            <p style="text-align: start; margin-bottom: 1rem;">Swap.Dance smart contracts was deployed on Vyper 3.1 and is immutable and not upgradeable. That guarantees that any funds you put into a contract will only be used according to that contract's code.</p>
             <p style="text-align: start; margin-bottom: 1rem;">Swap.Dance can't guarantee that "bad tokens" will not be listed in the token list. Swap.Dance operator can't control a new listing of any token. You must do DYOR before buy any new asset. Anyone can report about "bad token" in our <a href="https://discord.gg/GSVZurABjd">official discord</a>. We will definitely take action after investigation.</p>
             <p style="text-align: start;">Please remember that any professional trader risks only the money the loss of which will not lead to financial collapse. That allows the trader to avoid causes of depression and unhappiness.</p>
           </div>
