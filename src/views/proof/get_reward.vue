@@ -57,11 +57,11 @@
               <router-link  @click="check()" :to="{name: 'Proof of Trade List'}">
                 <input type="sell_select_tokens" style="text-align: left; width: 100%;" :value="'⩖ ' + token_symbol2" :disabled="true">
               </router-link>
-              <input style="text-right: left; width: 100%;" id="pot_stake_amount" :value="available_reward.toString().substring(0, 10)" :disabled="true">
+              <input style="text-right: left; width: 100%; font-weight: bold;" id="pot_stake_amount" :value="available_reward.toString().substring(0, 10)" :disabled="true">
             </div>
             <div className='wrapper2inline'>
               <p style="text-align: left;">Withdraw</p>
-              <p style="text-align: right;"><mark class="purple">DANCE</mark> Reward</p>
+              <p style="text-align: right;">Your <mark class="purple">DANCE</mark> Reward</p>
             </div>
           </div>      
           <div className='simple-card' style="background: white">

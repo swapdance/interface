@@ -62,7 +62,7 @@
                   :disabled="true"
                 >
               </router-link>
-              <input style="text-right: left; width: 100%;" :value="fees" @input="fees = $event.target.value" placeholder="0.3%">
+              <input style="text-right: left; width: 100%; font-weight: bold;" :value="fees" @input="fees = $event.target.value" placeholder="0.3%">
             </div>
             <div className='wrapper3' style="grid-template-columns: 1.7fr 0.6fr 0.05fr 0.8fr; grid-column-gap: 1px;">
               <p style="text-align: left;">Recommended Fee</p>

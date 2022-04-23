@@ -37,7 +37,7 @@
               <img @click="open_addr()" :title="dance_addr" style="margin-left: auto; border-radius: 50%; cursor: pointer;" :src="getImgUrl(dance_addr)" width="24" height="24">
             </div>
             <div className='wrapper2inline'>
-                <input type="sell_select_tokens" style="text-align: left; width: 87%;" value="DANCE" :disabled="true">
+                <input type="sell_select_tokens" style="text-align: left; width: 87%; background-color: #e3f4fe; cursor: not-allowed;" value="DANCE" :disabled="true">
                 <router-link :to="{name: 'Reward List'}">
                   <input style="cursor: pointer; " :value="select_list" :disabled="true">
                 </router-link>
@@ -61,7 +61,7 @@
               <p style="text-align: left;">Burn Rate</p>
               <p style="text-align: right;">{{burn_rate}}%</p>
             </div>
-            <div className='wrapper2inline' style="margin-bottom: 1rem;">
+            <div v-if="lock_status == 1" className='wrapper2inline' style="margin-bottom: 1rem;">
               <p style="text-align: left;">Selected LPs</p>
               <p style="text-align: right;">{{selected_lp_tokens}}</p>
             </div>
@@ -70,7 +70,7 @@
               <p style="text-align: right;">{{withdrawal_type}}</p>
             </div>
             <div className='wrapper2inline' style="margin-bottom: 1rem;">
-              <p style="text-align: left;">Super Balance</p>
+              <p style="text-align: left;">Total Locked</p>
               <p style="text-align: right;">{{nFormatter(dance_balance)}} <mark class="purple">DANCE</mark></p>
             </div>
             <div className='wrapper2inline'>

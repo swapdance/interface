@@ -54,7 +54,7 @@
               <router-link @click="check()" :to="{name: 'Pair List'}">
                 <input type="sell_select_tokens" style="text-align: left; width: 100%;" :value="'⩖ ' + token_symbol2" :disabled="true">
               </router-link>
-              <input style="text-right: left; width: 100%;" id="new_liquidity_input" :value="token_amount1" @input="token_amount1 = $event.target.value" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" placeholder="1.0">
+              <input style="text-right: left; width: 100%; font-weight: bold;" id="new_liquidity_input" :value="token_amount1" @input="token_amount1 = $event.target.value" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" placeholder="1.0">
             </div>
             <div v-if="add_liquidity_station_type == 1 && token_balance_calc1 == 0 && token_balance_calc2 == 0" className='wrapper2inline' style="grid-row-gap: 0rem;">
               <router-link @click="check()" :to="{name: 'Pair List'}">
@@ -64,6 +64,7 @@
                 :value="token_amount1" 
                 @input="token_amount1 = $event.target.value" 
                 oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
+                style="font-weight: bold;"
                 placeholder="1.0">
             </div>
             <div v-if="add_liquidity_station_type == 1 && token_balance_calc1 == 0 && token_balance_calc2 == 0" className='wrapper2inline' style="grid-row-gap: 0rem;">
@@ -74,6 +75,7 @@
                 :value="token_amount_new_liquidity2" 
                 @input="token_amount_new_liquidity2 = $event.target.value" 
                 oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
+                style="font-weight: bold;"
                 placeholder="1.0">
             </div>
             
