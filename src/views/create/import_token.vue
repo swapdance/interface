@@ -15,7 +15,7 @@
             <div v-for="result of resultQuery" :key="result.id">
               <div className='wrapper2i' style=" margin: 1rem;">
                 <p style="text-align: left; cursor: pointer; width: 130%;"  @click="select_go_back(result.token_name, result.token_symbol, result.token_address, result.token_decimal)">{{result.token_name}} ⥊ ${{result.token_symbol}}</p>
-                <img @click="open_addr(result.token_address)" style="margin-left: auto; border-radius: 50%; cursor: pointer;" :src="getImgUrl(result.token_address)" width="24" height="24">
+                <img @click="open_addr(result.token_address)" :title="result.token_address" style="margin-left: auto; border-radius: 50%; cursor: pointer;" :src="getImgUrl(result.token_address)" width="24" height="24">
               </div>
               <hr class="solid">
             </div>

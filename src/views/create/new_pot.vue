@@ -4,11 +4,11 @@
         <div className='card'>
 
           <div className='wrapper3inline'>
-            <h3 style="text-align: left; width: 100%;"><mark class="purple"> ⚛ </mark>New Pot Pool</h3>
+            <h3 style="text-align: left; width: 115%;"><mark class="purple"> ⚛ </mark>New Stake Pool</h3>
             <p style="text-align: left;width: 1%;"></p>
             <div className='wrapper3inline' style="margin-left: auto;">
               <p style="text-align: left;width: 1%;"></p>
-                <router-link style="text-decoration: none; color: inherit;" :to="{name: 'New Pool'}">
+                <router-link style="text-decoration: none; color: inherit;" :to="{name: 'New Pool'}" tooltip="Create a New Pair">
                   <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-polygon" style="margin-left: auto; margin-top: 0.1rem; cursor: pointer; vertical-align: bottom;" width="23" height="23" viewBox="0 0 23 23" stroke-width="1.3" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                     <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                     <circle cx="12" cy="5" r="2"></circle>
@@ -21,7 +21,7 @@
                     <path d="M13.5 17.5l-7 -5"></path>
                   </svg>
                 </router-link>
-              <router-link style="text-decoration: none; color: inherit;" :to="{name: 'Settings'}">
+              <router-link style="text-decoration: none; color: inherit;" :to="{name: 'Settings'}" tooltip="Settings">
                 <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-adjustments-horizontal" style="margin-left: auto; margin-top: 0.1rem; cursor: pointer; vertical-align: bottom;" width="23" height="23" viewBox="0 0 23 23" stroke-width="1.2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                   <circle cx="14" cy="6" r="2"></circle>
@@ -44,22 +44,22 @@
               <p style="text-align: left; width: 150%">Select Available Pair</p>
               <p style="text-align: left;"></p>
               <div v-if="token_address1.length > 0" className='wrapper2inline' style="margin-left: auto;">
-                <img @click="open_addr(token_address1)" style="margin-left: auto; border-radius: 50%; cursor: pointer;" :src="getImgUrl(token_address1)" width="24" height="24">
-                <img @click="open_addr(token_address2)" style="margin-right: auto; border-radius: 50%; cursor: pointer;" :src="getImgUrl(token_address2)" width="24" height="24">
+                <img @click="open_addr(token_address1)" :title="token_address1" style="margin-left: auto; border-radius: 50%; cursor: pointer;" :src="getImgUrl(token_address1)" width="24" height="24">
+                <img @click="open_addr(token_address2)" :title="token_address2" style="margin-right: auto; border-radius: 50%; cursor: pointer;" :src="getImgUrl(token_address2)" width="24" height="24">
               </div>
             </div>
             <div v-if="pot_station_list.length > 0" className='wrapper3'>
               <router-link :to="{name: 'New PoT List'}">
-                <input type="sell_select_tokens" style="text-align: left; width: 100%;" :value="token_symbol1 + ' ⩖'" :disabled="true">
+                <input type="sell_select_tokens" style="text-align: left; width: 100%;" :value="'⩖ ' + token_symbol1" :disabled="true">
               </router-link>
               <router-link :to="{name: 'New PoT List'}">
-                <input type="sell_select_tokens" style="text-align: left; width: 100%;" :value="token_symbol2 + ' ⩖'" :disabled="true">
+                <input type="sell_select_tokens" style="text-align: left; width: 100%;" :value="'⩖ ' + token_symbol2" :disabled="true">
               </router-link>
               <input style="text-right: left; width: 100%;" :value="'Select 1 of ' + pot_station_list.length" :disabled="true">
             </div>
             <div v-if="pot_station_list.length == 0" className='wrapper3'>
-              <input type="sell_select_tokens" style="text-align: left; width: 100%;" :value="token_symbol1 + ' ⩖'" :disabled="true">
-              <input type="sell_select_tokens" style="text-align: left; width: 100%;" :value="token_symbol2 + ' ⩖'" :disabled="true">
+              <input type="sell_select_tokens" style="text-align: left; width: 100%;" :value="'⩖ ' + token_symbol1" :disabled="true">
+              <input type="sell_select_tokens" style="text-align: left; width: 100%;" :value="'⩖ ' + token_symbol2" :disabled="true">
               <input style="text-right: left; width: 100%;" :value="'List is empty'" :disabled="true">
             </div>
             <p style="text-align: left;">This pool will collect <mark class="purple">$DANCE</mark> token every trade.</p>

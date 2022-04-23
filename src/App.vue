@@ -15,7 +15,7 @@
           </span>
           <div class="dropdown-content">
             <router-link style="text-decoration: none; color: inherit;" :to="{name: 'New Pool'}"><p style="margin-bottom: 0.4rem; margin-top: 0.4rem;">New Pair</p></router-link>
-            <router-link style="text-decoration: none; color: inherit;" :to="{name: 'New PoT'}"><p style="margin-bottom: 0.4rem; margin-top: 0.4rem;">New PoT Pool</p></router-link>
+            <router-link style="text-decoration: none; color: inherit;" :to="{name: 'New PoT'}"><p style="margin-bottom: 0.4rem; margin-top: 0.4rem;">New Stake Pool</p></router-link>
           </div>
           </div>
           <div class="dropdown2">
@@ -150,7 +150,7 @@ export default {
 
   .dropdown1:hover .dropdown-content {
     display: block;
-    min-width: 9rem;
+    min-width: 10rem;
   }
 
   .dropdown2:hover .dropdown-content {

@@ -15,8 +15,8 @@
             <div className='wrapper3inline'  style=" margin: 1rem;">
                 <p style="text-align: left; cursor: pointer; width: 130%" @click="select_go_back(result.pair_station)">{{result.token_symbol1}} ⥊ {{result.token_symbol2}}</p>
                 <div className='wrapper2inline'>
-                  <img @click="open_addr(result.token_address1)" style="margin-left: auto; border-radius: 50%; cursor: pointer;" :src="getImgUrl(result.token_address1)" width="24" height="24">
-                  <img @click="open_addr(result.token_address2)" style="border-radius: 50%; cursor: pointer;" :src="getImgUrl(result.token_address2)" width="24" height="24">
+                  <img @click="open_addr(result.token_address1)" :title="result.token_address1" style="margin-left: auto; border-radius: 50%; cursor: pointer;" :src="getImgUrl(result.token_address1)" width="24" height="24">
+                  <img @click="open_addr(result.token_address2)" :title="result.token_address2" style="border-radius: 50%; cursor: pointer;" :src="getImgUrl(result.token_address2)" width="24" height="24">
                 </div>
                 <p style="width: 130%">{{result.token_balance1}} ⥊ {{result.token_balance2}}</p>
               </div>

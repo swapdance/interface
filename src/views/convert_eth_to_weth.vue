@@ -4,12 +4,12 @@
         <div className='card'>
           
           <div className='wrapper3inline'>
-            <h3 style="text-align: left; width: 150%;"><mark class="purple"> ⨝ </mark>Convert</h3>
+            <h3 style="text-align: left; width: 150%;"><mark class="purple"> ⨝ </mark>Wrap or Unwrap</h3>
             <p style="text-align: left;width: 1%;"></p>
             
             <div className='wrapper4inline' style="margin-left: auto;">
 
-              <router-link style="text-decoration: none; color: inherit;" :to="{name: 'Home'}">
+              <router-link style="text-decoration: none; color: inherit;" :to="{name: 'Home'}" tooltip="Swap Tokens">
                 <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-replace" style="margin-left: auto; margin-top: 0.1rem; cursor: pointer; vertical-align: bottom;" width="23" height="23" viewBox="0 0 23 23" stroke-width="1.2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                   <rect x="3" y="3" width="6" height="6" rx="1"></rect>
@@ -18,7 +18,7 @@
                   <path d="M3 13v3a2 2 0 0 0 2 2h6l-3 -3m0 6l3 -3"></path>
                 </svg>
               </router-link>
-              <router-link style="text-decoration: none; color: inherit;" :to="{name: 'Proof of Trade'}">
+              <router-link style="text-decoration: none; color: inherit;" :to="{name: 'Proof of Trade'}" tooltip="Stake Pool">
                 <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-rocket" transform="scale(-1 1)" style="margin-left: auto; margin-top: 0.1rem; cursor: pointer; vertical-align: bottom;" width="23" height="23" viewBox="0 0 23 23" stroke-width="1.4" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                   <path d="M4 13a8 8 0 0 1 7 7a6 6 0 0 0 3 -5a9 9 0 0 0 6 -8a3 3 0 0 0 -3 -3a9 9 0 0 0 -8 6a6 6 0 0 0 -5 3"></path>
@@ -26,7 +26,7 @@
                   <circle cx="15" cy="9" r="1"></circle>
                 </svg>
               </router-link>
-              <router-link style="text-decoration: none; color: inherit;" :to="{name: 'Add Liquidity'}">
+              <router-link style="text-decoration: none; color: inherit;" :to="{name: 'Add Liquidity'}" tooltip="Add Liquidity">
                 <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-stack-2" style="margin-left: auto; margin-top: 0.1rem; cursor: pointer; vertical-align: bottom;" width="23" height="23" viewBox="0 0 23 23" stroke-width="1.2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                   <polyline points="12 4 4 8 12 12 20 8 12 4"></polyline>
@@ -34,7 +34,7 @@
                   <polyline points="4 16 12 20 20 16"></polyline>
                 </svg>
               </router-link>
-              <router-link style="text-decoration: none; color: inherit;" :to="{name: 'Settings'}">
+              <router-link style="text-decoration: none; color: inherit;" :to="{name: 'Settings'}" tooltip="Settings">
                 <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-adjustments-horizontal" style="margin-left: auto; margin-top: 0.1rem; cursor: pointer; vertical-align: bottom;" width="23" height="23" viewBox="0 0 23 23" stroke-width="1.2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                   <circle cx="14" cy="6" r="2"></circle>
@@ -53,15 +53,15 @@
           <hr class="solid" style="margin-bottom: 1rem;">
           <div className='simple-card'>
             <div className='wrapper2inline'>
-              <p style="text-align: left;">From</p>
-              <img @click="open_addr(network_coin)" style="margin-left: auto; border-radius: 50%; cursor: pointer;" :src="getImgUrl(network_coin)" width="24" height="24">
+              <p style="text-align: left;">Convert From</p>
+              <img @click="open_addr(network_coin)" style="margin-left: auto; border-radius: 50%; cursor: pointer;" :title="network_coin" :src="getImgUrl(network_coin)" width="24" height="24">
             </div>
             <div className='wrapper2inline'>
               <router-link @click="selectToken(1)" :to="{name: 'Token List'}">
                 <input 
                   type="sell_select_tokens" 
                   style="text-align: left; width: 100%;" 
-                  :value="network_symbol + ' ⩖'" 
+                  :value="'⩖ ' + network_symbol" 
                   :disabled="true">
               </router-link>
               <input 
@@ -78,15 +78,15 @@
           <div style="margin-top: -1.5rem;"><a href="#switch" class="to-top" v-on:click="switch_tokens"></a></div>  
           <div className='simple-card' style="background: white">
             <div className='wrapper2inline'>
-              <p style="text-align: left;">To</p>
-              <img @click="open_addr(wrapped_coin)" style="margin-left: auto; border-radius: 50%; cursor: pointer;" :src="getImgUrl(wrapped_coin)" width="24" height="24">
+              <p style="text-align: left;">Convert To</p>
+              <img @click="open_addr(wrapped_coin)" style="margin-left: auto; border-radius: 50%; cursor: pointer;" :title="wrapped_coin" :src="getImgUrl(wrapped_coin)" width="24" height="24">
             </div>
             <div className='wrapper2inline'>
               <router-link @click="selectToken(2)" :to="{name: 'Token List'}">
                 <input 
                   type="buy_select_tokens" 
                   style="text-align: left; width: 100%;" 
-                  :value="wrapped_symbol + ' ⩖'" 
+                  :value="'⩖ ' + wrapped_symbol" 
                   :disabled="true">
               </router-link>
               <input style="background: white" :value="token_price1" :disabled="true">

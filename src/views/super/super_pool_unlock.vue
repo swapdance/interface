@@ -7,14 +7,14 @@
             <p style="text-align: left;width: 1%;"></p>
             <div className='wrapper3inline' style="margin-left: auto;">
             <p></p>
-              <router-link style="text-decoration: none; color: inherit;" :to="{name: 'Super Pool'}">
+              <router-link style="text-decoration: none; color: inherit;" :to="{name: 'Super Pool'}" tooltip="Lock Funds">
                 <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-box-model-2" style="margin-left: auto; margin-top: 0.1rem; cursor: pointer; vertical-align: bottom;" width="23" height="23" viewBox="0 0 23 23" stroke-width="1.2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                   <path d="M8 8h8v8h-8z"></path>
                   <rect x="4" y="4" width="16" height="16" rx="2"></rect>
                 </svg>
               </router-link>
-              <router-link style="text-decoration: none; color: inherit;" :to="{name: 'Settings'}">
+              <router-link style="text-decoration: none; color: inherit;" :to="{name: 'Settings'}" tooltip="Settings">
                 <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-adjustments-horizontal" style="margin-left: auto; margin-top: 0.1rem; cursor: pointer; vertical-align: bottom;" width="23" height="23" viewBox="0 0 23 23" stroke-width="1.2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                   <circle cx="14" cy="6" r="2"></circle>
@@ -34,7 +34,7 @@
           <div className='simple-card'>
             <div className='wrapper2inline'>
               <p style="text-align: left;">Unlock</p>
-              <img @click="open_addr()" style="margin-left: auto; border-radius: 50%; cursor: pointer;" :src="getImgUrl(dance_addr)" width="24" height="24">
+              <img @click="open_addr()" :title="dance_addr" style="margin-left: auto; border-radius: 50%; cursor: pointer;" :src="getImgUrl(dance_addr)" width="24" height="24">
             </div>
             <div className='wrapper2inline'>
                 <input type="sell_select_tokens" style="text-align: left; width: 87%;" value="DANCE" :disabled="true">

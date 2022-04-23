@@ -4,10 +4,10 @@
         <div className='card'>
           
           <div className='wrapper3inline'>
-            <h3 style="text-align: left; width: 150%;"><mark class="purple"> ⫓ </mark>Swap</h3>
+            <h3 style="text-align: left; width: 150%;"><mark class="purple"> ⫓ </mark>Swap Tokens</h3>
             <p style="text-align: left;width: 1%;"></p>
             <div className='wrapper4inline' style="margin-left: auto;">
-              <router-link style="text-decoration: none; color: inherit;" :to="{name: 'Proof of Trade'}">
+              <router-link style="text-decoration: none; color: inherit;" :to="{name: 'Proof of Trade'}" tooltip="Stake Pool">
                 <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-rocket" transform="scale(-1 1)" style="margin-left: auto; margin-top: 0.1rem; cursor: pointer; vertical-align: bottom;" width="23" height="23" viewBox="0 0 23 23" stroke-width="1.4" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                   <path d="M4 13a8 8 0 0 1 7 7a6 6 0 0 0 3 -5a9 9 0 0 0 6 -8a3 3 0 0 0 -3 -3a9 9 0 0 0 -8 6a6 6 0 0 0 -5 3"></path>
@@ -15,7 +15,7 @@
                   <circle cx="15" cy="9" r="1"></circle>
                 </svg>
               </router-link>
-              <router-link style="text-decoration: none; color: inherit;" :to="{name: 'Add Liquidity'}">
+              <router-link style="text-decoration: none; color: inherit;" :to="{name: 'Add Liquidity'}" tooltip="Add Liquidity">
                 <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-stack-2" style="margin-left: auto; margin-top: 0.1rem; cursor: pointer; vertical-align: bottom;" width="23" height="23" viewBox="0 0 23 23" stroke-width="1.2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                   <polyline points="12 4 4 8 12 12 20 8 12 4"></polyline>
@@ -24,7 +24,7 @@
                 </svg>
               </router-link>
 
-              <router-link style="text-decoration: none; color: inherit;" :to="{name: 'Convert ETH to WETH'}">
+              <router-link style="text-decoration: none; color: inherit;" :to="{name: 'Convert ETH to WETH'}" tooltip="Convert ETH to WETH">
                 <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-blur" style="margin-left: auto; margin-top: 0.1rem; cursor: pointer; vertical-align: bottom;" width="23" height="23" viewBox="0 0 23 23" stroke-width="1.4"  stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                   <path d="M12 21a9.01 9.01 0 0 0 2.32 -.302a9.004 9.004 0 0 0 1.74 -16.733a9 9 0 1 0 -4.06 17.035z"></path>
@@ -36,7 +36,7 @@
                   <path d="M12 15h8"></path>
                 </svg>
               </router-link>
-              <router-link style="text-decoration: none; color: inherit;" :to="{name: 'Settings'}">
+              <router-link style="text-decoration: none; color: inherit;" :to="{name: 'Settings'}" tooltip="Settings">
                 <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-adjustments-horizontal" style="margin-left: auto; margin-top: 0.1rem; cursor: pointer; vertical-align: bottom;" width="23" height="23" viewBox="0 0 23 23" stroke-width="1.2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                   <circle cx="14" cy="6" r="2"></circle>
@@ -55,8 +55,8 @@
           <hr class="solid" style="margin-bottom: 1rem;">
           <div className='simple-card'>
             <div className='wrapper2inline'>
-              <p style="text-align: left;">From</p>
-              <img @click="open_addr(token_addr_interface1)" style="margin-left: auto; border-radius: 50%; cursor: pointer;" :src="getImgUrl(token_addr_interface1)" width="24" height="24">
+              <p style="text-align: left;">Swap From</p>
+              <img @click="open_addr(token_addr_interface1)" style="margin-left: auto; border-radius: 50%; cursor: pointer;" :title="token_addr_interface1" :src="getImgUrl(token_addr_interface1)" width="24" height="24">
             </div>
             <div className='wrapper2inline'>
               <router-link @click="selectToken(1)" :to="{name: 'Token List'}">
@@ -70,7 +70,8 @@
                 :value="token_price1" 
                 @input="token_price1 = $event.target.value" 
                 oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
-                placeholder="1.0">
+                placeholder="1.0"
+              >
             </div>
             <div className='wrapper2inline'>
               <p style="text-align: left;">{{token_name1}}</p>
@@ -80,8 +81,8 @@
           <div style="margin-top: -1.5rem;"><a href="#switch" class="to-top" v-on:click="switch_tokens"></a></div>  
           <div className='simple-card' style="background: white">
             <div className='wrapper2inline'>
-              <p style="text-align: left;">To</p>
-              <img @click="open_addr(token_addr_interface2)" style="margin-left: auto; border-radius: 50%; cursor: pointer;" :src="getImgUrl(token_addr_interface2)" width="24" height="24">
+              <p style="text-align: left;">Swap To</p>
+              <img @click="open_addr(token_addr_interface2)" style="margin-left: auto; border-radius: 50%; cursor: pointer;" :title="token_addr_interface2" :src="getImgUrl(token_addr_interface2)" width="24" height="24">
             </div>
             <div className='wrapper2inline'>
               <router-link @click="selectToken(2)" :to="{name: 'Token List'}">
@@ -93,6 +94,7 @@
               </router-link>
               <input style="background: white;" :value="token_price2" :disabled="true">
             </div>
+            
             <div className='wrapper2inline' style="grid-template-columns: 0.9fr 2.1fr;">
               <p style="text-align: left; width: 150%;">{{token_name2}}</p>
               <p style="text-align: right;">Balance {{nFormatter(user_balance2).toString().substring(0, 12)}}</p>

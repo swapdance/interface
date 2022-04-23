@@ -7,7 +7,7 @@
             <p style="text-align: left;width: 1%;"></p>
             <div className='wrapper3inline' style="margin-left: auto;">
               <p style="text-align: left;width: 1%;"></p>
-              <router-link style="text-decoration: none; color: inherit;" :to="{name: 'Remove Liquidity'}">
+              <router-link style="text-decoration: none; color: inherit;" :to="{name: 'Remove Liquidity'}" tooltip="Remove Liquidity">
                 <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-box-padding" style="margin-left: auto; margin-top: 0.1rem; cursor: pointer; vertical-align: bottom;" width="23" height="23" viewBox="0 0 23 23" stroke-width="1.2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                   <rect x="4" y="4" width="16" height="16" rx="2"></rect>
@@ -21,7 +21,7 @@
                   <path d="M12 16v.01"></path>
                 </svg>
               </router-link>
-              <router-link style="text-decoration: none; color: inherit;" :to="{name: 'Settings'}">
+              <router-link style="text-decoration: none; color: inherit;" :to="{name: 'Settings'}" tooltip="Settings">
                 <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-adjustments-horizontal" style="margin-left: auto; margin-top: 0.1rem; cursor: pointer; vertical-align: bottom;" width="23" height="23" viewBox="0 0 23 23" stroke-width="1.2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                   <circle cx="14" cy="6" r="2"></circle>
@@ -40,25 +40,25 @@
           <hr class="solid" style="margin-bottom: 1rem;">
           <div className='simple-card'>
             <div className='wrapper3inline'>
-              <p style="text-align: left;">To Pool</p>
+              <p style="text-align: left;">Select Pool</p>
               <p style="text-align: left;"></p>
               <div className='wrapper2inline' style="margin-left: auto;">
-                <img @click="open_addr(token_addr)" style="margin-left: auto; border-radius: 50%; cursor: pointer;" :src="getImgUrl(token_addr)" width="24" height="24">
-                <img @click="open_addr(token_addr2)" style="margin-right: auto; border-radius: 50%; cursor: pointer;" :src="getImgUrl(token_addr2)" width="24" height="24">
+                <img @click="open_addr(token_addr)" :title="token_addr" style="margin-left: auto; border-radius: 50%; cursor: pointer;" :src="getImgUrl(token_addr)" width="24" height="24">
+                <img @click="open_addr(token_addr2)" :title="token_addr2" style="margin-right: auto; border-radius: 50%; cursor: pointer;" :src="getImgUrl(token_addr2)" width="24" height="24">
               </div>
             </div>
             <div v-if="token_balance_calc1 > 0 && token_balance_calc2 > 0 || (add_liquidity_station_type == 0 && token_balance_calc1 == 0 && token_balance_calc1 == 0)" className='wrapper3'>
               <router-link @click="check()" :to="{name: 'Pair List'}">
-                <input type="sell_select_tokens" style="text-align: left; width: 100%;" :value="token_symbol1 + ' ⩖'" :disabled="true">
+                <input type="sell_select_tokens" style="text-align: left; width: 100%;" :value="'⩖ ' + token_symbol1" :disabled="true">
               </router-link>
               <router-link @click="check()" :to="{name: 'Pair List'}">
-                <input type="sell_select_tokens" style="text-align: left; width: 100%;" :value="token_symbol2 + ' ⩖'" :disabled="true">
+                <input type="sell_select_tokens" style="text-align: left; width: 100%;" :value="'⩖ ' + token_symbol2" :disabled="true">
               </router-link>
               <input style="text-right: left; width: 100%;" id="new_liquidity_input" :value="token_amount1" @input="token_amount1 = $event.target.value" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" placeholder="1.0">
             </div>
             <div v-if="add_liquidity_station_type == 1 && token_balance_calc1 == 0 && token_balance_calc2 == 0" className='wrapper2inline' style="grid-row-gap: 0rem;">
               <router-link @click="check()" :to="{name: 'Pair List'}">
-                <input type="sell_select_tokens" style="text-align: left; width: 100%;" :value="token_symbol1 + ' ⩖'" :disabled="true">
+                <input type="sell_select_tokens" style="text-align: left; width: 100%;" :value="'⩖ ' + token_symbol1" :disabled="true">
               </router-link>
               <input 
                 :value="token_amount1" 
@@ -66,10 +66,9 @@
                 oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
                 placeholder="1.0">
             </div>
-            <hr v-if="add_liquidity_station_type == 1 && token_balance_calc1 == 0 && token_balance_calc2 == 0" class="solid">
             <div v-if="add_liquidity_station_type == 1 && token_balance_calc1 == 0 && token_balance_calc2 == 0" className='wrapper2inline' style="grid-row-gap: 0rem;">
               <router-link @click="check()" :to="{name: 'Pair List'}">
-                <input type="sell_select_tokens" style="text-align: left; width: 100%;" :value="token_symbol2 + ' ⩖'" :disabled="true">
+                <input type="sell_select_tokens" style="text-align: left; width: 100%;" :value="'⩖ ' + token_symbol2" :disabled="true">
               </router-link>
               <input 
                 :value="token_amount_new_liquidity2" 
@@ -104,8 +103,8 @@
               <p style="text-align: left;">Token 2</p>
               <p style="text-align: right;">{{token_amount_new_liquidity2.toString().substring(0, 15)}} <mark class="purple">{{token_symbol2}}</mark></p>
             </div>
-            <div className='wrapper2inline'  style="margin-bottom: 1rem; grid-template-columns: 0.3fr 2.7fr;">
-              <p style="text-align: left;">Receive</p>
+            <div className='wrapper2inline'  style="margin-bottom: 1rem; grid-template-columns: 0.9fr 2.1fr;">
+              <p style="text-align: left;">You Receive</p>
               <p style="text-align: right;">{{lp_received.toString().substring(0, 12)}} <mark class="purple">LP</mark></p>
             </div>
             <h4 style="text-align: left; margin-bottom: 1rem;">Pool info</h4>

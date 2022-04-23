@@ -8,7 +8,7 @@
             <p style="text-align: left;width: 1%;"></p>
             <div className='wrapper3inline' style="margin-left: auto;">
               <p style="text-align: left;width: 1%;"></p>
-              <router-link style="text-decoration: none; color: inherit;" :to="{name: 'New PoT'}">
+              <router-link style="text-decoration: none; color: inherit;" :to="{name: 'New PoT'}" tooltip="Create a New Stake Pool">
                 <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-apps" style="margin-left: auto; margin-top: 0.1rem; cursor: pointer; vertical-align: bottom;" width="23" height="23" viewBox="0 0 23 23" stroke-width="1.2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                   <rect x="4" y="4" width="6" height="6" rx="1"></rect>
@@ -18,7 +18,7 @@
                   <line x1="17" y1="4" x2="17" y2="10"></line>
                 </svg>
               </router-link>
-              <router-link style="text-decoration: none; color: inherit;" :to="{name: 'Settings'}">
+              <router-link style="text-decoration: none; color: inherit;" :to="{name: 'Settings'}" tooltip="Settings">
                 <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-adjustments-horizontal" style="margin-left: auto; margin-top: 0.1rem; cursor: pointer; vertical-align: bottom;" width="23" height="23" viewBox="0 0 23 23" stroke-width="1.2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                   <circle cx="14" cy="6" r="2"></circle>
@@ -41,8 +41,8 @@
               <p style="text-align: left;">Import Tokens</p>
               <p style="text-align: left;"></p>
               <div className='wrapper2inline' style="margin-left: auto;">
-                <img v-if="token_address1.length > 0" @click="open_addr(token_address1)" style="margin-left: auto; border-radius: 50%; cursor: pointer;" :src="getImgUrl(token_address1)" width="24" height="24">
-                <img v-if="token_address2.length > 0" @click="open_addr(token_address2)" style="margin-right: auto; border-radius: 50%; cursor: pointer;" :src="getImgUrl(token_address2)" width="24" height="24">
+                <img v-if="token_address1.length > 0" @click="open_addr(token_address1)" :title="token_address1" style="margin-left: auto; border-radius: 50%; cursor: pointer;" :src="getImgUrl(token_address1)" width="24" height="24">
+                <img v-if="token_address2.length > 0" @click="open_addr(token_address2)" :title="token_address2" style="margin-right: auto; border-radius: 50%; cursor: pointer;" :src="getImgUrl(token_address2)" width="24" height="24">
               </div>
             </div>
             <div className='wrapper3'>
@@ -50,7 +50,7 @@
                 <input 
                   type="sell_select_tokens" 
                   style="text-align: left; width: 100%;" 
-                  :value="token_symbol1 + ' ⩖'" 
+                  :value="'⩖ ' + token_symbol1" 
                   :disabled="true"
                 >
               </router-link>
@@ -58,17 +58,17 @@
                 <input 
                   type="sell_select_tokens" 
                   style="text-align: left; width: 100%;"
-                  :value="token_symbol2 + ' ⩖'"  
+                  :value="'⩖ ' + token_symbol2"  
                   :disabled="true"
                 >
               </router-link>
-              <input style="text-right: left; width: 100%;" :value="fees" @input="fees = $event.target.value" placeholder="0.2%">
+              <input style="text-right: left; width: 100%;" :value="fees" @input="fees = $event.target.value" placeholder="0.3%">
             </div>
             <div className='wrapper3' style="grid-template-columns: 1.7fr 0.6fr 0.05fr 0.8fr; grid-column-gap: 1px;">
               <p style="text-align: left;">Recommended Fee</p>
               <p style="text-align: right;"><a href="#stable" @click="set_fee(4)">Stable 4</a>&nbsp;</p>
               <p style="text-align: right;">/</p>
-              <p style="text-align: right;"><a href="#dynamic" @click="set_fee(20)">Dynamic 20</a></p>
+              <p style="text-align: right;"><a href="#dynamic" @click="set_fee(30)">Dynamic 30</a></p>
             </div>
           </div>      
           <div className='simple-card' style="background: white">

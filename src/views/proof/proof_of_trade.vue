@@ -6,7 +6,7 @@
             <h3 style="text-align: left; width: 100%;"><mark class="purple"> ⪮ </mark>PoT Stake</h3>
             <p style="text-align: left;width: 1%;"></p>
             <div className='wrapper3inline' style="margin-left: auto;">
-              <router-link style="text-decoration: none; color: inherit;" :to="{name: 'Proof of Trade Unstake'}">
+              <router-link style="text-decoration: none; color: inherit;" :to="{name: 'Proof of Trade Unstake'}" tooltip="Unstake">
                 <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-api-app" style="margin-left: auto; margin-top: 0.1rem; cursor: pointer; vertical-align: bottom;" width="23" height="23" viewBox="0 0 23 23" stroke-width="1.4" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                   <path d="M12 15h-6.5a2.5 2.5 0 1 1 0 -5h.5"></path>
@@ -15,7 +15,7 @@
                   <path d="M9 12v-6.5a2.5 2.5 0 0 1 5 0v.5"></path>
                 </svg>
               </router-link>
-              <router-link style="text-decoration: none; color: inherit;" :to="{name: 'Get Reward'}">
+              <router-link style="text-decoration: none; color: inherit;" :to="{name: 'Get Reward'}" tooltip="Get Reward">
                 <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-coin" style="margin-left: auto; margin-top: 0.1rem; cursor: pointer; vertical-align: bottom;" width="23" height="23" viewBox="0 0 23 23" stroke-width="1.3" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                   <circle cx="12" cy="12" r="9"></circle>
@@ -23,7 +23,7 @@
                   <path d="M12 6v2m0 8v2"></path>
                 </svg>
               </router-link>
-              <router-link style="text-decoration: none; color: inherit;" :to="{name: 'Settings'}">
+              <router-link style="text-decoration: none; color: inherit;" :to="{name: 'Settings'}" tooltip="Settings">
                 <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-adjustments-horizontal" style="margin-left: auto; margin-top: 0.1rem; cursor: pointer; vertical-align: bottom;" width="23" height="23" viewBox="0 0 23 23" stroke-width="1.2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                   <circle cx="14" cy="6" r="2"></circle>
@@ -45,8 +45,8 @@
               <p style="text-align: left;">Select PoT Pool</p>
               <p style="text-align: left;"></p>
               <div className='wrapper2inline' style="margin-left: auto;">
-                <img @click="open_addr(token_addr1)" style="margin-left: auto; border-radius: 50%; cursor: pointer;" :src="getImgUrl(token_addr1)" width="24" height="24">
-                <img @click="open_addr(token_addr2)" style="margin-right: auto; border-radius: 50%; cursor: pointer;" :src="getImgUrl(token_addr2)" width="24" height="24">
+                <img @click="open_addr(token_addr1)" :title="token_addr1" style="margin-left: auto; border-radius: 50%; cursor: pointer;" :src="getImgUrl(token_addr1)" width="24" height="24">
+                <img @click="open_addr(token_addr2)" :title="token_addr2" style="margin-right: auto; border-radius: 50%; cursor: pointer;" :src="getImgUrl(token_addr2)" width="24" height="24">
               </div>
             </div>
             <div className='wrapper3'>

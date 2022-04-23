@@ -8,7 +8,7 @@
             <p style="text-align: left;width: 1%;"></p>
             <div className='wrapper3inline' style="margin-left: auto;">
               <p style="text-align: left;width: 1%;"></p>
-              <router-link style="text-decoration: none; color: inherit;" :to="{name: 'Add Liquidity'}">
+              <router-link style="text-decoration: none; color: inherit;" :to="{name: 'Add Liquidity'}" tooltip="Add Liquidity">
                 <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-stack-2" style="margin-left: auto; margin-top: 0.1rem; cursor: pointer; vertical-align: bottom;" width="23" height="23" viewBox="0 0 23 23" stroke-width="1.2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                   <polyline points="12 4 4 8 12 12 20 8 12 4"></polyline>
@@ -16,7 +16,7 @@
                   <polyline points="4 16 12 20 20 16"></polyline>
                 </svg>
               </router-link>
-              <router-link style="text-decoration: none; color: inherit;" :to="{name: 'Settings'}">
+              <router-link style="text-decoration: none; color: inherit;" :to="{name: 'Settings'}" tooltip="Settings">
                 <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-adjustments-horizontal" style="margin-left: auto; margin-top: 0.1rem; cursor: pointer; vertical-align: bottom;" width="23" height="23" viewBox="0 0 23 23" stroke-width="1.2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                   <circle cx="14" cy="6" r="2"></circle>
@@ -35,19 +35,19 @@
           <hr class="solid" style="margin-bottom: 1rem;">
           <div className='simple-card'>
             <div className='wrapper3inline'>
-              <p style="text-align: left;">From Pool</p>
+              <p style="text-align: left;">Select Pool</p>
               <p style="text-align: left;"></p>
               <div className='wrapper2inline' style="margin-left: auto;">
-                <img @click="open_addr(token_addr1)" style="margin-left: auto; border-radius: 50%; cursor: pointer;" :src="getImgUrl(token_addr1)" width="24" height="24">
-                <img @click="open_addr(token_addr2)" style="margin-right: auto; border-radius: 50%; cursor: pointer;" :src="getImgUrl(token_addr2)" width="24" height="24">
+                <img @click="open_addr(token_addr1)" :title="token_addr1" style="margin-left: auto; border-radius: 50%; cursor: pointer;" :src="getImgUrl(token_addr1)" width="24" height="24">
+                <img @click="open_addr(token_addr2)" :title="token_addr2" style="margin-right: auto; border-radius: 50%; cursor: pointer;" :src="getImgUrl(token_addr2)" width="24" height="24">
               </div>
             </div>
             <div className='wrapper3'>
               <router-link @click="check()" :to="{name: 'Pair List'}">
-                <input type="sell_select_tokens" style="text-align: left; width: 100%;" :value="token_symbol1 + ' ⩖'" :disabled="true">
+                <input type="sell_select_tokens" style="text-align: left; width: 100%;" :value="'⩖ ' + token_symbol1" :disabled="true">
               </router-link>
               <router-link @click="check()" :to="{name: 'Pair List'}">
-                <input type="sell_select_tokens" style="text-align: left; width: 100%;" :value="token_symbol2 + ' ⩖'" :disabled="true">
+                <input type="sell_select_tokens" style="text-align: left; width: 100%;" :value="'⩖ ' + token_symbol2" :disabled="true">
               </router-link>
               <input style="text-right: left; width: 100%;" id="lp_input_amount" :value="LP_amount" @input="LP_amount = $event.target.value" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" placeholder="1.0">
             </div>
@@ -58,7 +58,7 @@
           </div>
           <div className='simple-card' style="background: white">
             <div className='wrapper2a' style="margin-bottom: 1rem; grid-template-columns: 2.9fr 0.2fr;">
-              <h4 style="text-align: left;">Receive</h4>
+              <h4 style="text-align: left;">You Receive</h4>
               <router-link style="text-decoration: none; color: inherit;" to="/liquidity_help"><div class="help-tip"></div></router-link>
             </div>
             <div className='wrapper2inline' style="margin-bottom: 1rem; grid-template-columns: 0.5fr 2.6fr;">

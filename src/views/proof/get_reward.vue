@@ -6,7 +6,7 @@
             <h3 style="text-align: left; width: 100%;"><mark class="purple"> ⟣ </mark>Get Reward</h3>
             <p style="text-align: left;width: 1%;"></p>
             <div className='wrapper3inline' style="margin-left: auto;">
-              <router-link style="text-decoration: none; color: inherit;" :to="{name: 'Proof of Trade'}">
+              <router-link style="text-decoration: none; color: inherit;" :to="{name: 'Proof of Trade'}" tooltip="Stake Pool">
                 <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-rocket" transform="scale(-1 1)" style="margin-left: auto; margin-top: 0.1rem; cursor: pointer; vertical-align: bottom;" width="23" height="23" viewBox="0 0 23 23" stroke-width="1.4" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                   <path d="M4 13a8 8 0 0 1 7 7a6 6 0 0 0 3 -5a9 9 0 0 0 6 -8a3 3 0 0 0 -3 -3a9 9 0 0 0 -8 6a6 6 0 0 0 -5 3"></path>
@@ -14,7 +14,7 @@
                   <circle cx="15" cy="9" r="1"></circle>
                 </svg>
               </router-link>
-              <router-link style="text-decoration: none; color: inherit;" :to="{name: 'Proof of Trade Unstake'}">
+              <router-link style="text-decoration: none; color: inherit;" :to="{name: 'Proof of Trade Unstake'}" tooltip="Unstake">
                 <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-api-app" style="margin-left: auto; margin-top: 0.1rem; cursor: pointer; vertical-align: bottom;" width="23" height="23" viewBox="0 0 23 23" stroke-width="1.4" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                   <path d="M12 15h-6.5a2.5 2.5 0 1 1 0 -5h.5"></path>
@@ -23,7 +23,7 @@
                   <path d="M9 12v-6.5a2.5 2.5 0 0 1 5 0v.5"></path>
                 </svg>
               </router-link>
-              <router-link style="text-decoration: none; color: inherit;" :to="{name: 'Settings'}">
+              <router-link style="text-decoration: none; color: inherit;" :to="{name: 'Settings'}"  tooltip="Settings">
                 <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-adjustments-horizontal" style="margin-left: auto; margin-top: 0.1rem; cursor: pointer; vertical-align: bottom;" width="23" height="23" viewBox="0 0 23 23" stroke-width="1.2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                   <circle cx="14" cy="6" r="2"></circle>
@@ -46,16 +46,16 @@
               <p style="text-align: left; width: 150%">Select PoT Pool</p>
               <p style="text-align: left;"></p>
               <div className='wrapper2inline' style="margin-left: auto;">
-                <img @click="open_addr(token_addr1)" style="margin-left: auto; border-radius: 50%; cursor: pointer;" :src="getImgUrl(token_addr1)" width="24" height="24">
-                <img @click="open_addr(token_addr2)" style="margin-right: auto; border-radius: 50%; cursor: pointer;" :src="getImgUrl(token_addr2)" width="24" height="24">
+                <img @click="open_addr(token_addr1)" :title="token_addr1" style="margin-left: auto; border-radius: 50%; cursor: pointer;" :src="getImgUrl(token_addr1)" width="24" height="24">
+                <img @click="open_addr(token_addr2)" :title="token_addr2" style="margin-right: auto; border-radius: 50%; cursor: pointer;" :src="getImgUrl(token_addr2)" width="24" height="24">
               </div>
             </div>
             <div className='wrapper3'>
               <router-link @click="check()" :to="{name: 'Proof of Trade List'}">
-                <input type="sell_select_tokens" style="text-align: left; width: 100%;" :value="token_symbol1 + ' ⩖'" :disabled="true">
+                <input type="sell_select_tokens" style="text-align: left; width: 100%;" :value="'⩖ ' + token_symbol1" :disabled="true">
               </router-link>
               <router-link  @click="check()" :to="{name: 'Proof of Trade List'}">
-                <input type="sell_select_tokens" style="text-align: left; width: 100%;" :value="token_symbol2 + ' ⩖'" :disabled="true">
+                <input type="sell_select_tokens" style="text-align: left; width: 100%;" :value="'⩖ ' + token_symbol2" :disabled="true">
               </router-link>
               <input style="text-right: left; width: 100%;" id="pot_stake_amount" :value="available_reward.toString().substring(0, 10)" :disabled="true">
             </div>

@@ -13,13 +13,13 @@
           <div className='simple-card' style="background: white; overflow-y:scroll; max-height:340px;">
             <div className='wrapper2inline' style=" margin: 1rem;">
               <p style="text-align: left; cursor: pointer; width: 130%;" @click="select_go_back('Ethereum', 'ETH', network_coin_wrapped_addr, 18)">{{network_coin_name}} ⥊ ${{network_coin_symbol}}</p>
-              <img @click="open_addr(network_coin_wrapped_addr)" style="margin-left: auto; border-radius: 50%; cursor: pointer;" :src="require(`@/assets/icons/${network_coin_wrapped_addr}/logo.png`)" width="24" height="24">
+              <img @click="open_addr(network_coin_wrapped_addr)" :title="network_coin_wrapped_addr" style="margin-left: auto; border-radius: 50%; cursor: pointer;" :src="require(`@/assets/icons/${network_coin_wrapped_addr}/logo.png`)" width="24" height="24">
             </div>
             <hr class="solid">
             <div v-for="result of resultQuery" :key="result.id">
               <div className='wrapper2i' style=" margin: 1rem;">
                 <p style="text-align: left; cursor: pointer; width: 130%;"  @click="select_go_back(result.token_name, result.token_symbol, result.token_address, result.token_decimal)">{{result.token_name}} ⥊ ${{result.token_symbol}}</p>
-                <img @click="open_addr(result.token_address)" style="margin-left: auto; border-radius: 50%; cursor: pointer;" :src="getImgUrl(result.token_address)" width="24" height="24">
+                <img @click="open_addr(result.token_address)" :title="result.token_address" style="margin-left: auto; border-radius: 50%; cursor: pointer;" :src="getImgUrl(result.token_address)" width="24" height="24">
               </div>
               <hr class="solid">
             </div>
