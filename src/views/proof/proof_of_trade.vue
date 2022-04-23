@@ -51,10 +51,10 @@
             </div>
             <div className='wrapper3'>
               <router-link @click="check()" :to="{name: 'Proof of Trade List'}">
-                <input type="sell_select_tokens" style="text-align: left; width: 100%;" :value="token_symbol1 + ' ⩖'" :disabled="true">
+                <input type="sell_select_tokens" style="text-align: left; width: 100%;" :value="'⩖ ' +  token_symbol1" :disabled="true">
               </router-link>
               <router-link  @click="check()" :to="{name: 'Proof of Trade List'}">
-                <input type="sell_select_tokens" style="text-align: left; width: 100%;" :value="token_symbol2 + ' ⩖'" :disabled="true">
+                <input type="sell_select_tokens" style="text-align: left; width: 100%;" :value="'⩖ ' +  token_symbol2" :disabled="true">
               </router-link>
               <input style="text-right: left; width: 100%;" id="pot_stake_amount" :value="stake_pot" @input="stake_pot = $event.target.value" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" placeholder="1.0">
             </div>

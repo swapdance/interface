@@ -62,8 +62,8 @@
               <router-link @click="selectToken(1)" :to="{name: 'Token List'}">
                 <input 
                   type="sell_select_tokens" 
-                  style="text-align: left; width: 100%;" 
-                  :value="token_symbol1 + ' ⩖'" 
+                  style="text-align: left; width: 105%;" 
+                  :value="'⩖ ' + token_symbol1" 
                   :disabled="true">
               </router-link>
               <input 
@@ -87,11 +87,11 @@
               <router-link @click="selectToken(2)" :to="{name: 'Token List'}">
                 <input 
                   type="buy_select_tokens" 
-                  style="text-align: left; width: 100%;" 
-                  :value="token_symbol2 + ' ⩖'" 
+                  style="text-align: left; width: 105%;" 
+                  :value="'⩖ ' + token_symbol2" 
                   :disabled="true">
               </router-link>
-              <input style="background: white" :value="token_price2" :disabled="true">
+              <input style="background: white;" :value="token_price2" :disabled="true">
             </div>
             <div className='wrapper2inline' style="grid-template-columns: 0.9fr 2.1fr;">
               <p style="text-align: left; width: 150%;">{{token_name2}}</p>
@@ -99,16 +99,15 @@
             </div>
           </div>
           <hr class="solid" style="margin-bottom: 1rem;">
-          <div className='wrapper3inline' >
+          <div className='wrapper2' style="margin-bottom: 1rem; grid-template-columns: 0.6fr 2.4fr;">
             <p style="text-align: left; width: 100%;"><mark class="purple">Slippage</mark></p>
-            <p class="to-main"></p>
             <p style="text-align: right; cursor: pointer;">
               <router-link style="text-decoration: none; color: inherit;" :to="{name: 'Settings'}"><mark class="purple"> ✎ {{slippage}}%</mark></router-link>
             </p>
           </div>
           <div v-if="tokens_path.length != 0">
             <div className='wrapper2' style="margin-bottom: 1rem; grid-template-columns: 0.6fr 2.4fr;">
-              <p style="text-align: left; width: 100%;">Trade Path</p>
+              <p style="text-align: left; width: 100%;">Route</p>
               <p style="text-align: right;">{{tokens_path.join(' &rarr; ')}}</p>
             </div>
             <div className='wrapper2' style="margin-bottom: 1rem; grid-template-columns: 0.7fr 2.3fr;">
