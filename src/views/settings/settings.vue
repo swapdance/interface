@@ -18,7 +18,7 @@
                     <div class="module"><button type="settings" v-on:click="button_slippage_swap(0.5)" @click="check_slippage(1)" :style="[activeButtonSlippage===1 ? {'background': '#595ec1', 'color': 'white' }: {'background': '#e3f4fe', 'color': 'black'}]" value="0.5">0.5%</button></div>
                     <div class="module"><button type="settings" v-on:click="button_slippage_swap(0.8)" @click="check_slippage(2)" :style="[activeButtonSlippage===2 ? {'background': '#595ec1', 'color': 'white' }: {'background': '#e3f4fe', 'color': 'black'}]" value="0.8">0.8%</button></div>
                     <div class="module"><button type="settings" v-on:click="button_slippage_swap(1.0)" @click="check_slippage(3)" :style="[activeButtonSlippage===3 ? {'background': '#595ec1', 'color': 'white' }: {'background': '#e3f4fe', 'color': 'black'}]" value="1.0">1.0%</button></div>
-                    <div class="module"><input type="settings" @click="check_slippage(4)" :value="slippage_swap" @input="slippage_swap = $event.target.value" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" placeholder="2.0%"></div>
+                    <div class="module"><input type="settings" @click="check_slippage(4)" :value="slippage_swap" @input="slippage_swap = $event.target.value" :oninput="handleInput" inputmode="numeric" placeholder="2.0%"></div>
                 </div>
             </div>
             <div className='wrapper2inline' style="margin-bottom: 1rem;">
@@ -28,7 +28,7 @@
                     <div class="module"><button type="settings" v-on:click="button_slippage_liq(0.1)" @click="check_slippage_liq(1)" :style="[activeButtonSlippageLiq===1 ? {'background': '#595ec1', 'color': 'white' }: {'background': '#e3f4fe', 'color': 'black'}]" value="0.1">0.1%</button></div>
                     <div class="module"><button type="settings" v-on:click="button_slippage_liq(0.15)" @click="check_slippage_liq(2)" :style="[activeButtonSlippageLiq===2 ? {'background': '#595ec1', 'color': 'white' }: {'background': '#e3f4fe', 'color': 'black'}]" value="0.15">0.15%</button></div>
                     <div class="module"><button type="settings" v-on:click="button_slippage_liq(0.2)" @click="check_slippage_liq(3)" :style="[activeButtonSlippageLiq===3 ? {'background': '#595ec1', 'color': 'white' }: {'background': '#e3f4fe', 'color': 'black'}]" value="0.2">0.20%</button></div>
-                    <div class="module"><input type="settings" @click="check_slippage_liq(4)" :value="slippage_liq" @input="slippage_liq = $event.target.value" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" placeholder="0.25%"></div>
+                    <div class="module"><input type="settings" @click="check_slippage_liq(4)" :value="slippage_liq" @input="slippage_liq = $event.target.value" :oninput="handleInput" inputmode="numeric" placeholder="0.25%"></div>
                 </div>
             </div>
             <div className='wrapper2inline' style="margin-bottom: 1rem;">
@@ -38,7 +38,7 @@
                     <div class="module"><button type="settings" v-on:click="button_slippage_time(10)" @click="check_time(1)" :style="[activeButtonTime===1 ? {'background': '#595ec1', 'color': 'white' }: {'background': '#e3f4fe', 'color': 'black'}]" value="10">10m</button></div>
                     <div class="module"><button type="settings" v-on:click="button_slippage_time(15)" @click="check_time(2)" :style="[activeButtonTime===2 ? {'background': '#595ec1', 'color': 'white' }: {'background': '#e3f4fe', 'color': 'black'}]" value="15">15m</button></div>
                     <div class="module"><button type="settings" v-on:click="button_slippage_time(20)" @click="check_time(3)" :style="[activeButtonTime===3 ? {'background': '#595ec1', 'color': 'white' }: {'background': '#e3f4fe', 'color': 'black'}]" value="20">20m</button></div>
-                    <div class="module"><input type="settings" @click="check_time(4)" :value="slippage_time" @input="slippage_time = $event.target.value" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" placeholder="30m"></div>
+                    <div class="module"><input type="settings" @click="check_time(4)" :value="slippage_time" @input="slippage_time = $event.target.value" :oninput="handleInput" inputmode="numeric" placeholder="30m"></div>
                 </div>
             </div>
             <h4 style="text-align: left; margin-bottom: 1rem;">New Pool and Proof of Trade Stake</h4>
@@ -50,7 +50,7 @@
                     <div class="module"><button type="settings" v-on:click="button_slippage_create(20)" @click="check_create(1)" :style="[activeButtonCreate===1 ? {'background': '#595ec1', 'color': 'white' }: {'background': '#e3f4fe', 'color': 'black'}]" value="20">20m</button></div>
                     <div class="module"><button type="settings" v-on:click="button_slippage_create(30)" @click="check_create(2)" :style="[activeButtonCreate===2 ? {'background': '#595ec1', 'color': 'white' }: {'background': '#e3f4fe', 'color': 'black'}]" value="30">30m</button></div>
                     <div class="module"><button type="settings" v-on:click="button_slippage_create(45)" @click="check_create(3)" :style="[activeButtonCreate===3 ? {'background': '#595ec1', 'color': 'white' }: {'background': '#e3f4fe', 'color': 'black'}]" value="45">45m</button></div>
-                    <div class="module"><input type="settings" @click="check_create(4)" :value="slippage_create" @input="slippage_create = $event.target.value" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" placeholder="60m"></div>
+                    <div class="module"><input type="settings" @click="check_create(4)" :value="slippage_create" @input="slippage_create = $event.target.value" :oninput="handleInput" inputmode="numeric" placeholder="60m"></div>
                 </div>
             </div>
 
@@ -181,6 +181,17 @@ export default {
       button_slippage_create,
     }
   },
+  methods: {
+    handleInput(e) {
+      const el = e.target;
+      const sel = el.selectionStart;
+      const numberValue = el.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1').replace(/^0[^.]/, '0');
+      el.value = numberValue;
+      this.$nextTick(() => {
+        el.setSelectionRange(sel, sel);
+      });
+    },
+  }
 }
 </script>
 <style>

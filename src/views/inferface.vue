@@ -435,7 +435,6 @@ export default {
       const el = e.target;
       const sel = el.selectionStart;
       const numberValue = el.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1').replace(/^0[^.]/, '0');
-      console.log(numberValue)
       el.value = numberValue;
       this.$nextTick(() => {
         el.setSelectionRange(sel, sel);

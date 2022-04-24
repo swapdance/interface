@@ -30,8 +30,9 @@
                   :value="amount_to_lock"
                   @input="amount_to_lock = $event.target.value" 
                   @keyup="change_amount(amount_to_lock)"
-                  oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
                   style="width:100%; height: 4.4rem; padding-right: 0.6rem; -webkit-text-stroke: 1px black;" 
+                  :oninput="handleInput"
+                  inputmode="numeric"
                   placeholder="1.0" />
           </div>
           <hr class="solid" >
@@ -99,6 +100,15 @@ export default {
     this.$store.state.reward_checked_list = 0;
   },
   methods: {
+    handleInput(e) {
+      const el = e.target;
+      const sel = el.selectionStart;
+      const numberValue = el.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1').replace(/^0[^.]/, '0');
+      el.value = numberValue;
+      this.$nextTick(() => {
+        el.setSelectionRange(sel, sel);
+      });
+    },
     async change_amount(amount_to_lock){
       for (let i = 0; i < this.list_reward.length; i++) {
         let pair_station = this.list_reward[i].pair_station;

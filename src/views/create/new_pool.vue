@@ -62,7 +62,14 @@
                   :disabled="true"
                 >
               </router-link>
-              <input style="text-right: left; width: 100%; -webkit-text-stroke: 1px black;" :value="fees" @input="fees = $event.target.value" placeholder="0.3%">
+              <input 
+                style="text-right: left; width: 100%; -webkit-text-stroke: 1px black;" 
+                :value="fees" 
+                @input="fees = $event.target.value" 
+                :oninput="handleInput"
+                inputmode="numeric"
+                placeholder="0.3%"
+              >
             </div>
             <div className='wrapper3' style="grid-template-columns: 1.7fr 0.6fr 0.05fr 0.8fr; grid-column-gap: 1px;">
               <p style="text-align: left;">Recommended Fee</p>
@@ -249,6 +256,15 @@ export default {
     }
   },
   methods: {
+    handleInput(e) {
+      const el = e.target;
+      const sel = el.selectionStart;
+      const numberValue = el.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1').replace(/^0[^.]/, '0');
+      el.value = numberValue;
+      this.$nextTick(() => {
+        el.setSelectionRange(sel, sel);
+      });
+    },
     getImgUrl: function (imagePath) {
       try {
         require(`@/assets/icons/${imagePath}/logo.png`);

@@ -50,7 +50,7 @@
                   id="super_input" 
                   :value="stake_super"
                   @input="stake_super = $event.target.value" 
-                  oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
+                  :oninput="handleInput"
                   placeholder="1.0">
             </div>
 
@@ -212,6 +212,15 @@ export default {
   },
   methods: {
     nFormatter,
+    handleInput(e) {
+      const el = e.target;
+      const sel = el.selectionStart;
+      const numberValue = el.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1').replace(/^0[^.]/, '0');
+      el.value = numberValue;
+      this.$nextTick(() => {
+        el.setSelectionRange(sel, sel);
+      });
+    },
     getImgUrl: function (imagePath) {
       try {
         require(`@/assets/icons/${imagePath}/logo.png`);
