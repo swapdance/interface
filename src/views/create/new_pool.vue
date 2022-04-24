@@ -63,6 +63,7 @@
                 >
               </router-link>
               <input 
+                ref="fees_in"
                 style="text-right: left; width: 100%; -webkit-text-stroke: 1px black;" 
                 :value="fees" 
                 @input="fees = $event.target.value" 
@@ -256,6 +257,9 @@ export default {
     }
   },
   methods: {
+    setFocus: function() {
+      this.$refs.fees_in.focus();
+    },
     handleInput(e) {
       const el = e.target;
       const sel = el.selectionStart;
@@ -385,7 +389,10 @@ export default {
     selectToken(idx) {
       this.$store.state.new_pool_selected_token = idx;
     },
-  }
+  },
+  created() {
+    this.$nextTick(() => this.setFocus());
+  },
 }
 </script>
 <style>

@@ -48,6 +48,7 @@
                 <input 
                   style="text-right: left; -webkit-text-stroke: 1px black;" 
                   id="super_input" 
+                  ref="lock_in"
                   :value="stake_super"
                   @input="stake_super = $event.target.value" 
                   :oninput="handleInput"
@@ -212,6 +213,9 @@ export default {
   },
   methods: {
     nFormatter,
+    setFocus: function() {
+      this.$refs.lock_in.focus();
+    },
     handleInput(e) {
       const el = e.target;
       const sel = el.selectionStart;
@@ -299,7 +303,10 @@ export default {
         }
       }
     },
-  }
+  },
+  created() {
+    this.$nextTick(() => this.setFocus());
+  },
 }
 </script>
 <style>

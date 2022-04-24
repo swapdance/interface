@@ -67,6 +67,7 @@
                   :disabled="true">
               </router-link>
               <input 
+                ref="amount_in"
                 :value="token_price1" 
                 @input="token_price1 = $event.target.value" 
                 :oninput="handleInput"
@@ -431,6 +432,9 @@ export default {
   },
   methods: {
     nFormatter,
+    setFocus: function() {
+      this.$refs.amount_in.focus();
+    },
     handleInput(e) {
       const el = e.target;
       const sel = el.selectionStart;
@@ -586,6 +590,9 @@ export default {
       this.token_price1 = "1.0";
       this.$store.dispatch("switch_prices");
     }
+  },
+  created() {
+    this.$nextTick(() => this.setFocus());
   },
   //mounted() {
   //  window.ethereum.request({ method: 'eth_requestAccounts' })

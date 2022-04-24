@@ -65,6 +65,7 @@
                   :disabled="true">
               </router-link>
               <input 
+                ref="convert_in"
                 :value="token_price1" 
                 @input="token_price1 = $event.target.value" 
                 :oninput="handleInput"
@@ -234,6 +235,9 @@ export default {
     }
   },
   methods: {
+    setFocus: function() {
+      this.$refs.convert_in.focus();
+    },
     handleInput(e) {
       const el = e.target;
       const sel = el.selectionStart;
@@ -311,6 +315,9 @@ export default {
     selectToken(idx) {
       this.$store.state.interface_selected_token = idx;
     },
+  },
+  created() {
+    this.$nextTick(() => this.setFocus());
   },
 }
 </script>

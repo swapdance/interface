@@ -8,7 +8,7 @@
           </div>
           <hr class="solid" style="margin-bottom: 1rem;">
           <div className='simple-card'>
-            <input v-model="searchQuery" style="text-align: left; width: 100%;" autocomplete="off" placeholder="⤷ Type address, symbol or name">
+            <input v-model="searchQuery" ref="search_in" style="text-align: left; width: 100%;" autocomplete="off" placeholder="⤷ Type address, symbol or name">
           </div>
           <div className='simple-card' style="background: white; overflow-y:scroll; max-height:340px;">
             <div className='wrapper2inline' style=" margin: 1rem;">
@@ -85,6 +85,9 @@ export default {
     };
   },
   methods: {
+    setFocus: function() {
+      this.$refs.search_in.focus();
+    },
     select_go_back: function (token_name, token_symbol, token_address, token_decimal) {
       //  if (network_coin_symbol.value == token_symbol)
       if (this.$store.state.interface_selected_token == 1) {
@@ -124,6 +127,9 @@ export default {
         return require(`@/assets/icons/undefined/logo.png`)
       }
     }
+  },
+  created() {
+    this.$nextTick(() => this.setFocus());
   },
   computed: {
     resultQuery() {

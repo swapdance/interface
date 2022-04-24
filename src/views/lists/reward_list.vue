@@ -8,7 +8,7 @@
           </div>
           <hr class="solid" style="margin-bottom: 1rem;">
           <div className='simple-card'>
-            <input v-model="searchQuery" style="text-align: left; width: 100%;" autocomplete="off" placeholder="⤷ Type address, symbol or name">
+            <input v-model="searchQuery" ref="search_in" style="text-align: left; width: 100%;" autocomplete="off" placeholder="⤷ Type address, symbol or name">
           </div>
           <div className='simple-card' style="background: white; overflow-y:scroll; max-height:340px;">
             
@@ -98,8 +98,12 @@ export default {
   created () {
     this.drop_checked_pairs();
     this.$store.state.reward_checked_list = 0;
+    this.$nextTick(() => this.setFocus());
   },
   methods: {
+    setFocus: function() {
+      this.$refs.search_in.focus();
+    },
     handleInput(e) {
       const el = e.target;
       const sel = el.selectionStart;

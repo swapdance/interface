@@ -54,13 +54,23 @@
               <router-link @click="check()" :to="{name: 'Pair List'}">
                 <input type="sell_select_tokens" style="text-align: left; width: 100%;" :value="'⩖ ' + token_symbol2" :disabled="true">
               </router-link>
-              <input style="text-right: left; width: 100%; -webkit-text-stroke: 1px black;" id="new_liquidity_input" :value="token_amount1" @input="token_amount1 = $event.target.value" :oninput="handleInput" inputmode="numeric" placeholder="1.0">
+              <input 
+                ref="liquidity_in"
+                style="text-right: left; width: 100%; -webkit-text-stroke: 1px black;" 
+                id="new_liquidity_input" 
+                :value="token_amount1" 
+                @input="token_amount1 = $event.target.value" 
+                :oninput="handleInput" 
+                inputmode="numeric" 
+                placeholder="1.0"
+              >
             </div>
             <div v-if="add_liquidity_station_type == 1 && token_balance_calc1 == 0 && token_balance_calc2 == 0" className='wrapper2inline' style="grid-row-gap: 0rem;">
               <router-link @click="check()" :to="{name: 'Pair List'}">
                 <input type="sell_select_tokens" style="text-align: left; width: 100%;" :value="'⩖ ' + token_symbol1" :disabled="true">
               </router-link>
               <input 
+                ref="liquidity_in"
                 :value="token_amount1" 
                 @input="token_amount1 = $event.target.value" 
                 :oninput="handleInput"
@@ -384,6 +394,9 @@ export default {
     }
   },
   methods: {
+    setFocus: function() {
+      this.$refs.liquidity_in.focus();
+    },
     handleInput(e) {
       const el = e.target;
       const sel = el.selectionStart;
@@ -515,7 +528,10 @@ export default {
         }
       }
     },
-  }
+  },
+  created() {
+    this.$nextTick(() => this.setFocus());
+  },
 }
 </script>
 <style>

@@ -8,7 +8,7 @@
           </div>
           <hr class="solid" style="margin-bottom: 1rem;">
           <div className='simple-card'>
-            <input v-model="searchQuery" style="text-align: left; width: 100%;" autocomplete="off" placeholder="⤷ Type address, symbol or name">
+            <input v-model="searchQuery" ref="search_in" style="text-align: left; width: 100%;" autocomplete="off" placeholder="⤷ Type address, symbol or name">
           </div>
           <div className='simple-card' style="background: white; overflow-y:scroll; max-height:340px;">
             <div v-for="result of resultQuery" :key="result.id">
@@ -91,6 +91,9 @@ export default {
     };
   },
   methods: {
+    setFocus: function() {
+      this.$refs.search_in.focus();
+    },
     getImgUrl: function (imagePath) {
       try {
         require(`@/assets/icons/${imagePath}/logo.png`);
@@ -99,6 +102,9 @@ export default {
         return require(`@/assets/icons/undefined/logo.png`)
       }
     }
+  },
+  created() {
+    this.$nextTick(() => this.setFocus());
   },
   computed: {
     resultQuery() {

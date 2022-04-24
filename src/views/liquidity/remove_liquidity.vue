@@ -49,7 +49,16 @@
               <router-link @click="check()" :to="{name: 'Pair List'}">
                 <input type="sell_select_tokens" style="text-align: left; width: 100%;" :value="'⩖ ' + token_symbol2" :disabled="true">
               </router-link>
-              <input style="text-right: left; width: 100%; -webkit-text-stroke: 1px black;" id="lp_input_amount" :value="LP_amount" @input="LP_amount = $event.target.value" :oninput="handleInput" inputmode="numeric" placeholder="1.0">
+              <input 
+                style="text-right: left; width: 100%; -webkit-text-stroke: 1px black;" 
+                ref="liquidity_out" 
+                id="lp_input_amount" 
+                :value="LP_amount" 
+                @input="LP_amount = $event.target.value" 
+                :oninput="handleInput" 
+                inputmode="numeric" 
+                placeholder="1.0"
+              >
             </div>
             <div className='wrapper2inline'>
               <p style="text-align: left;">Withdraw <a href="#max" @click="use_max_balance()">Max</a></p>
@@ -248,6 +257,9 @@ export default {
     }
   },
   methods: {
+    setFocus: function() {
+      this.$refs.liquidity_out.focus();
+    },
     handleInput(e) {
       const el = e.target;
       const sel = el.selectionStart;
@@ -337,7 +349,10 @@ export default {
         }
       }
     },
-  }
+  },
+  created() {
+    this.$nextTick(() => this.setFocus());
+  },
 }
 </script>
 <style>

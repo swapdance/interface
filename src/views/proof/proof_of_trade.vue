@@ -59,6 +59,7 @@
               <input 
                 style="text-right: left; width: 100%; -webkit-text-stroke: 1px black;" 
                 id="pot_stake_amount" 
+                ref="stake_in"
                 :value="stake_pot" 
                 @input="stake_pot = $event.target.value" 
                 :oninput="handleInput"
@@ -234,6 +235,9 @@ export default {
   },
   methods: {
     nFormatter,
+    setFocus: function() {
+      this.$refs.stake_in.focus();
+    },
     handleInput(e) {
       const el = e.target;
       const sel = el.selectionStart;
@@ -315,7 +319,10 @@ export default {
         }
       }
     },
-  }
+  },
+  created() {
+    this.$nextTick(() => this.setFocus());
+  },
 }
 </script>
 <style scoped>
