@@ -69,6 +69,7 @@
               <input 
                 :value="token_price1" 
                 @input="token_price1 = $event.target.value" 
+                @change="handleInput"
                 oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
                 style="-webkit-text-stroke: 1px black;"
                 placeholder="1.0"
@@ -430,6 +431,17 @@ export default {
   },
   methods: {
     nFormatter,
+    handleInput(e) {
+      const el = e.target;
+      const sel = el.selectionStart;
+      const upperValue = el.value.toUpperCase();
+
+      el.value = this.input = upperValue;
+      this.event = e;
+      this.$nextTick(() => {
+        el.setSelectionRange(sel, sel);
+      });
+    },
     async single_swap(expiry){
       let token = this.token_array[0];
       let station = this.station_array[0];
