@@ -58,18 +58,9 @@
           </div>
           <div className='simple-card' style="background: white">
             <div className='wrapper2a' style="margin-bottom: 1rem; grid-template-columns: 2.9fr 0.2fr;">
-              <h4 style="text-align: left;">You Receive</h4>
+              <h4 style="text-align: left;">Pool info</h4>
               <router-link style="text-decoration: none; color: inherit;" to="/liquidity_help"><div class="help-tip"></div></router-link>
             </div>
-            <div className='wrapper2inline' style="margin-bottom: 1rem; grid-template-columns: 0.5fr 2.6fr;">
-              <p style="text-align: left;">Token 1</p>
-              <p style="text-align: right;">{{token_amount_out1}} <mark class="purple">{{token_symbol1}}</mark></p>
-            </div>
-            <div className='wrapper2inline' style="margin-bottom: 1rem; grid-template-columns: 0.55fr 2.6fr;">
-              <p style="text-align: left;">Token 2</p>
-              <p style="text-align: right;">{{token_amount_out2}} <mark class="purple">{{token_symbol2}}</mark></p>
-            </div>
-            <h4 style="text-align: left; margin-bottom: 1rem;">Pool info</h4>
             <div className='wrapper2inline' style="margin-bottom: 1rem;">
               <p style="text-align: left;">My Share</p>
               <p style="text-align: right;" :class="my_share > 25 ? 'green_class' : ''">{{my_share.toString().substring(0, 9)}}%</p>
@@ -78,9 +69,21 @@
               <p style="text-align: left;">Pool Impact</p>
               <p style="text-align: right;" :class="pool_impact > 5 ? 'red_class' : ''">{{pool_impact.toString().substring(0, 12)}}%</p>
             </div>
-            <div className='wrapper2inline'>
+            <div className='wrapper2inline' style="margin-bottom: 1rem;">
               <p style="text-align: left;">{{token_symbol1}} / {{token_symbol2}}</p>
               <p style="text-align: right;">{{token_balance1.toString().substring(0, 9)}} / {{token_balance2.toString().substring(0, 9)}}</p>
+            </div>
+            <div className='wrapper2a' style="margin-bottom: 1rem; grid-template-columns: 2.9fr 0.2fr;">
+              <h4 style="text-align: left;">You Receive</h4>
+              <p></p>
+            </div>
+            <div className='wrapper2inline' style="margin-bottom: 1rem; grid-template-columns: 0.5fr 2.6fr;">
+              <p style="text-align: left;">Token 1</p>
+              <p style="text-align: right;">{{token_amount_out1}} <mark class="purple">{{token_symbol1}}</mark></p>
+            </div>
+            <div className='wrapper2inline' style="grid-template-columns: 0.55fr 2.6fr;">
+              <p style="text-align: left;">Token 2</p>
+              <p style="text-align: right;">{{token_amount_out2}} <mark class="purple">{{token_symbol2}}</mark></p>
             </div>
           </div>
 
