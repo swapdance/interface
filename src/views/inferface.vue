@@ -70,7 +70,7 @@
                 :value="token_price1" 
                 @input="token_price1 = $event.target.value" 
                 oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
-                style="font-weight: bold;"
+                style="-webkit-text-stroke: 1px black;"
                 placeholder="1.0"
               >
             </div>
@@ -89,7 +89,7 @@
               <router-link @click="selectToken(2)" :to="{name: 'Token List'}">
                 <input 
                   type="buy_select_tokens" 
-                  style="text-align: left; width: 105%;" 
+                  style="text-align: left; width: 100%;" 
                   :value="'⩖ ' + token_symbol2" 
                   :disabled="true">
               </router-link>

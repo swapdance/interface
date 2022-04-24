@@ -46,7 +46,7 @@
             <div className='wrapper2' style="grid-template-columns: 0.95fr 2.05fr;">
                 <input type="sell_select_tokens" style="text-align: left; width: 87%; background-color: #e3f4fe; cursor: not-allowed;" value="DANCE" :disabled="true">
                 <input 
-                  style="text-right: left; font-weight: bold;" 
+                  style="text-right: left; -webkit-text-stroke: 1px black;" 
                   id="super_input" 
                   :value="stake_super"
                   @input="stake_super = $event.target.value" 

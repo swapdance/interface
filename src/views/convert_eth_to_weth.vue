@@ -68,7 +68,7 @@
                 :value="token_price1" 
                 @input="token_price1 = $event.target.value" 
                 oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
-                style="font-weight: bold;"
+                style="-webkit-text-stroke: 1px black;"
                 placeholder="1.0">
             </div>
             <div className='wrapper2inline'>

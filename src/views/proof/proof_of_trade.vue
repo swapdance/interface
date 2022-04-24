@@ -56,7 +56,7 @@
               <router-link  @click="check()" :to="{name: 'Proof of Trade List'}">
                 <input type="sell_select_tokens" style="text-align: left; width: 100%;" :value="'⩖ ' +  token_symbol2" :disabled="true">
               </router-link>
-              <input style="text-right: left; width: 100%; font-weight: bold;" id="pot_stake_amount" :value="stake_pot" @input="stake_pot = $event.target.value" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" placeholder="1.0">
+              <input style="text-right: left; width: 100%; -webkit-text-stroke: 1px black;" id="pot_stake_amount" :value="stake_pot" @input="stake_pot = $event.target.value" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" placeholder="1.0">
             </div>
             <div className='wrapper2inline'>
               <p style="text-align: left;">Deposit <a href="#max" @click="use_max_balance()">Max</a></p>
