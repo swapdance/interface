@@ -68,7 +68,7 @@
           <div className='simple-card' style="background: white">
             <div className='wrapper2a' style="margin-bottom: 1rem; grid-template-columns: 2.9fr 0.2fr;">
               <h4 style="text-align: left;">Pool info</h4>
-              <router-link style="text-decoration: none; color: inherit;" to="/new_pot_pool_help"><div class="help-tip"></div></router-link>
+              <a style="text-decoration: none; color: inherit;" href="https://docs.swap.dance/how-does-it-work/proof-of-trade" target="_blank"><div class="help-tip"></div></a>
             </div>
             <div className='wrapper2inline' style="margin-bottom: 1rem;">
               <p style="text-align: left;">Pair Fee</p>

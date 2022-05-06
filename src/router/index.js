@@ -26,12 +26,6 @@ import NewPoTList from "@/views/lists/new_pot_list.vue";
 import ProofOfTradeList from "@/views/lists/pot_list.vue";
 // help
 import JoinToCommunity from "@/views/info/join.vue";
-import NewPoTHelp from "@/views/info/new_pot_help.vue";
-import NewPairHelp from "@/views/info/new_pair_help.vue";
-import PoTHelp from "@/views/info/proof_of_trade_help.vue";
-import LiquidityHelp from "@/views/info/liquidity_help.vue";
-import SuperPoolHelp from "@/views/info/super_pool_help.vue";
-import PoTReward from "@/views/info/proof_of_trade_reward_help.vue";
 // confirm
 import ConfirmReward from "@/views/confirm/reward.vue"; 
 import ConfirmConvert from "@/views/confirm/convert.vue";  
@@ -161,36 +155,6 @@ const routes = [
     path: "/super_pool_unlock",
     name: "Super Pool Unlock",
     component: SuperPoolUnlock,
-  },
-  {
-    path: "/new_pair_help",
-    name: "New Pair Help",
-    component: NewPairHelp,
-  },
-  {
-    path: "/proof_of_trade_help",
-    name: "Proof of trade help",
-    component: PoTHelp,
-  },
-  {
-    path: "/new_pot_pool_help",
-    name: "New PoT Pool Help",
-    component: NewPoTHelp,
-  },
-  {
-    path: "/proof_of_trade_reward_help",
-    name: "Proof of trade reward help",
-    component: PoTReward,
-  },
-  {
-    path: "/super_pool_help",
-    name: "Super Pool Help",
-    component: SuperPoolHelp,
-  },
-  {
-    path: "/liquidity_help",
-    name: "Liquidity Help",
-    component: LiquidityHelp,
   },
   {
     path: "/reward_list",

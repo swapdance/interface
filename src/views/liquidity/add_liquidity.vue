@@ -103,7 +103,7 @@
           <div className='simple-card' style="background: white">
             <div className='wrapper2a' style="margin-bottom: 1rem; grid-template-columns: 2.9fr 0.2fr;">
               <h4 style="text-align: left;">Deposit</h4>
-              <router-link style="text-decoration: none; color: inherit;" to="/liquidity_help"><div class="help-tip"></div></router-link>
+              <a style="text-decoration: none; color: inherit;" href="https://docs.swap.dance/how-does-it-work/provide-liquidity" target="_blank"><div class="help-tip"></div></a>
             </div>
             <div className='wrapper2a' style="margin-bottom: 1rem; grid-template-columns: 0.5fr 2.6fr;">
               <p style="text-align: left;">Token 1</p>

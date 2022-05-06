@@ -48,7 +48,7 @@
               <p style="text-align: right;">{{'xDx' + token_symbol1 + 'x' + token_symbol2}}</p>
             </div>  
             <div v-if="tx_confirm2 == true" className='wrapper2' style="margin-bottom: 1rem; margin-top: 1rem; grid-template-columns: 1.5fr 1.5fr;">
-              <h4 style="text-align: left;">Pair Addr</h4>
+              <h4 style="text-align: left;">Stake Pool Addr</h4>
               <p @click="open_addr()" style="text-align: right; color: #008a7b; cursor: pointer;">{{pot_addr.toString().substring(0, 18) + '...'}}</p>
             </div>  
             <p v-if="tx_confirm2 == true" style="text-align: center; margin-top: 1rem; color: #008a7b;">Great! Now {{token_symbol1 + '/' + token_symbol2}} pair earns <mark class="purple">$DANCE</mark>!</p>
