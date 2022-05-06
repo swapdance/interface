@@ -57,7 +57,7 @@
               <router-link  @click="check()" :to="{name: 'Proof of Trade List'}">
                 <input type="sell_select_tokens" style="text-align: left; width: 100%;" :value="'⩖ ' + token_symbol2" :disabled="true">
               </router-link>
-              <input style="text-right: left; width: 100%; -webkit-text-stroke: 1px black;" id="pot_stake_amount" :value="available_reward.toString().substring(0, 10)" :disabled="true">
+              <input style="text-right: left; width: 100%; -webkit-text-stroke: 1px black; cursor: not-allowed;" id="pot_stake_amount" :value="available_reward.toString().substring(0, 10)" :disabled="true">
             </div>
             <div className='wrapper2inline'>
               <p style="text-align: left;">Withdraw</p>
@@ -103,7 +103,7 @@ export default {
 
     useMeta({
       title: 'Get DANCE token Reward : Swap.Dance', 
-      description: 'Choose a proof of trade pool where you stake your LP token, press "Withdraw Reward", confirm the transaction and receive DANCE token to your wallet',
+      description: 'Choose a Proof of Trade pool where you stake your LP tokens, click on "Withdraw Reward", confirm the transaction and receive DANCE tokens to your wallet.',
       htmlAttrs: { lang: 'en', amp: true },
       keywords: 'Swap.Dance, DANCE token, get reward, DANCE token reward, proof of trade pool, Swap tokens, Exchange tokens, DEX, AMM',
     })

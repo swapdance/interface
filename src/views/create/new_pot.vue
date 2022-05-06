@@ -105,7 +105,7 @@ export default {
     
     useMeta({
       title: 'Create a New Proof of Trade Pool : Swap.Dance', 
-      description: 'Choose a trading pair, press "Create a new PoT Pool", confirm the transaction and start earn DANCE token on each trade were made in this trading pair.',
+      description: 'Choose a trading pair, click on "Create a new PoT Pool", confirm the transaction and start to earn DANCE tokens for each trade that was made within this trading pair.',
       htmlAttrs: { lang: 'en', amp: true },
       keywords: 'Swap.Dance, DANCE token, new PoT, new proof of trade pool, Proof of Trade, Swap tokens, Exchange tokens, DEX, AMM',
     })

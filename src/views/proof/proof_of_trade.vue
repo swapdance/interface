@@ -132,7 +132,7 @@ export default {
 
     useMeta({
       title: 'Stake LP Token : Proof of Trade : Swap.Dance', 
-      description: 'Choose a Proof of Trade Pool accordingly to your LP token, set an amount, press "Deposit LP", confirm the transaction and start earn DANCE token on each trade were made in this trading pair. If you already have any DANCE token reward it will be sent to your wallet.',
+      description: 'Choose a Proof of Trade Pool in accordance with your LP token, set an amount, click on "Deposit LP", confirm the transaction and start to earn DANCE tokens for each trade made within this trading pair. If you already have any DANCE token reward, it will be sent to your wallet.',
       htmlAttrs: { lang: 'en', amp: true },
       keywords: 'Swap.Dance, DANCE token, Stake LP Token, proof of trade pool, Swap tokens, Exchange tokens, DEX, AMM',
     })

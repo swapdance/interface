@@ -202,7 +202,7 @@ export default {
   setup() {
     useMeta({
       title: 'Provide Liquidity : Swap.Dance', 
-      description: 'Choose a trading pair, type an amount you want to deposit press "Deposit Liquidity", confirm the transaction and start earn on liquidity mining',
+      description: 'Choose a trading pair, type an amount you want to deposit, click on "Deposit Liquidity", confirm the transaction and start to earn by liquidity mining.',
       htmlAttrs: { lang: 'en', amp: true },
       keywords: 'Swap.Dance, DANCE token, New liquidity, liquidity pool, Swap tokens, Exchange tokens, DEX, AMM',
     })

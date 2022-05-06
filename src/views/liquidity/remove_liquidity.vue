@@ -142,7 +142,7 @@ export default {
 
     useMeta({
       title: 'Remove Liquidity : Swap.Dance', 
-      description: 'Choose a trading pair, type an amount of LP token you want to withdraw press "Remove Liquidity", confirm the transaction and receive tokens to your wallet',
+      description: 'Choose a trading pair, type an amount of LP tokens you want to withdraw, click on "Remove Liquidity", confirm the transaction and receive tokens to your wallet.',
       htmlAttrs: { lang: 'en', amp: true },
       keywords: 'Swap.Dance, DANCE token, Remove liquidity, liquidity pool, Swap tokens, Exchange tokens, DEX, AMM',
     })

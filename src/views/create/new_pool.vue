@@ -161,7 +161,7 @@ export default {
   setup() {
     useMeta({
       title: 'Create a New Liquidity Pool : Swap.Dance', 
-      description: 'Choose ERC20 tokens that will form a trading pair, press "Create a new pair", confirm the transaction and start earn on liquidity mining',
+      description: 'Choose ERC20 tokens that will form a trading pair, click on "Create a new pair", confirm the transaction and start to earn on liquidity mining.',
       htmlAttrs: { lang: 'en', amp: true },
       keywords: 'Swap.Dance, DANCE token, New liquidity, liquidity pool, new pair, new pool, new token pool, Swap tokens, Exchange tokens, DEX, AMM',
     })

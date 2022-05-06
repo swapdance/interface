@@ -123,7 +123,7 @@ export default {
     
     useMeta({
       title: 'Convert ETH to WETH : Wrap / Unwrap : Swap.Dance', 
-      description: 'If you have ETH, you can wrap it and get ETH by simply converting ETH to WETH. Or if you want to get back your ETH just unwrap WETH to ETH.',
+      description: 'If you have ETH, you can wrap it and get ETH by simply converting ETH to WETH. Or if you want to get back your ETH, just unwrap WETH to ETH.',
       htmlAttrs: { lang: 'en', amp: true },
       keywords: 'Wrapped Ether (WETH), ETHEREUM, Convert, Wrap, Unwrap',
     })

@@ -56,7 +56,7 @@
                 <input type="sell_select_tokens" style="text-align: left; width: 100%;" :value="'⩖ ' + token_symbol2" :disabled="true">
               </router-link>
               <input 
-                style="text-right: left; width: 100%; -webkit-text-stroke: 1px black;"
+                style="text-right: left; width: 100%; -webkit-text-stroke: 1px black; cursor: not-allowed;"
                 :value="unstake_pot.toString().substring(0, 10)" 
                 id="pot_unstake_amount" 
                 :disabled="true"
@@ -110,7 +110,7 @@ export default {
 
     useMeta({
       title: 'Unstake LP Token : Proof of Trade : Swap.Dance', 
-      description: 'Choose a proof of trade pool where you stake your LP token, press "Withdraw LP", confirm the transaction and receive LP token to your wallet. If you have any DANCE token reward it also will be sent to your wallet.',
+      description: 'Choose a Proof of Trade pool where you stake your LP token, click on "Withdraw LP", confirm the transaction and receive LP token to your wallet. If you have any DANCE token reward, it also will be sent to your wallet.',
       htmlAttrs: { lang: 'en', amp: true },
       keywords: 'Swap.Dance, DANCE token, Unstake, proof of trade pool, Swap tokens, Exchange tokens, DEX, AMM',
     })

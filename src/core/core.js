@@ -863,7 +863,7 @@ export default {
         }
     },
     async create_new_pair(token1, token2, fee1, fee2, stataion_type, expiry) {
-        
+        console.log("data", station_addr, token1, token2, fee1, fee2, stataion_type, expiry)
         let create_contract = new ethers.Contract(station_addr, stationABI, signer);
         const create_pair = await create_contract.initialize(token1, token2, fee1, fee2, stataion_type, expiry)
         .catch((error) => {
@@ -1068,8 +1068,8 @@ export default {
     },
     async get_approved_tokens(token_addr1, token_addr2){
         let deployer_contract = new ethers.Contract(deployer_addr,deployerABI,provider);
-        const check_token1 = await deployer_contract.approved_tokens(token_addr1);
-        const check_token2 = await deployer_contract.approved_tokens(token_addr2);
+        const check_token1 = await deployer_contract.approved_tokens(0, token_addr1);
+        const check_token2 = await deployer_contract.approved_tokens(0, token_addr2);
         var result;
         if (check_token1 == true && check_token2 == true) {
             result = true;
