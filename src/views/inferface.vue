@@ -100,7 +100,7 @@
             
             <div className='wrapper2inline' style="grid-template-columns: 0.9fr 2.1fr;">
               <p style="text-align: left; width: 150%;">{{token_name2}}</p>
-              <p style="text-align: right;">Balance {{nFormatter(user_balance2).toString().substring(0, 12)}}</p>
+              <p style="text-align: right;">Available {{nFormatter(token_station_bal2).toString().substring(0, 12)}}</p>
             </div>
           </div>
           <hr class="solid" style="margin-bottom: 1rem;">
@@ -255,7 +255,8 @@ export default {
         
         token_price2.value = get_price;
         
-        token_price2_min.value = (token_price2.value - (token_price2.value * slippage.value)/100).toFixed(6);
+        
+        token_price2_min.value = (token_price2.value - (token_price2.value * slippage.value)/100).toFixed(token_decimal2.value == 18 ? token_decimal2.value - 5 : token_decimal2.value).replace(/(\.0*|(?<=(\..*))0*)$/, '');
 
         let temp_impact_price;
         let temp_impact_price2;
@@ -428,6 +429,7 @@ export default {
       network_coin_symbol,
       token_addr_interface1,
       token_addr_interface2,
+      token_station_bal2
     }
   },
   methods: {

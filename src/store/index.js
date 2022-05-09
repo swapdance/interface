@@ -272,7 +272,8 @@ const store = createStore({
             let token_decimals_balances = data_list[8];
             let station_pot_array_balances= data_list[9];
 
-            for (let i = 0; 49 >= i; i++) { // set max i
+            for (let i = 0; 29 >= i; i++) { // set max i
+
                 let station_address = station_list[i];
                 if (station_address != zero_addr) {
                     let token_address_a = token_list_a[i];

@@ -221,12 +221,12 @@ export default {
     },
     async get_amounts(station_addr, token_in, amount_in, decimal1, decimal2) {
         // use parse e num before process big amount
-
+        
         var get_price;
         var continue_checking = false;
         
         const big_amount = ethers.utils.parseUnits((amount_in).toFixed(decimal1).toString(), decimal1);
-        
+
         const get_amounts_list = await load_price_data_contract.get_amounts_out(
             station_addr, token_in, big_amount).catch((error) => {
             console.log(error);
@@ -253,7 +253,7 @@ export default {
             let temp_token_in_list = [];
             let temp_amount_in_list = [];
             let temp_amount_out_list = [];
-
+            
             for (let i = 0; i < station_list.length; i++) {
                 if(station_list[i] != zero_addr) {
                     temp_station_list.push(station_list[i]);
@@ -301,6 +301,7 @@ export default {
                 get_price = 0;
 
             } else {
+                
                 get_price = ethers.utils.formatUnits(ENumber(temp_amount), decimal2);
             }
             return {
