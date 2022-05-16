@@ -55,7 +55,7 @@
               <router-link style="text-decoration: none; color: inherit;" :to="{name: 'Super Pool Unlock'}"><p style="margin-bottom: 0.4rem; margin-top: 0.4rem;">Claim Funds</p></router-link>
             </div>
           </div>
-          <a style="text-decoration: none; color: inherit;" href="https://docs.swap.dance/how-does-it-work/proof-of-trade" target="_blank"><p style="margin-top: 0.1rem; margin-bottom: 0.5rem;">Docs</p></a>
+          <a style="text-decoration: none; color: inherit;" href="https://docs.swap.dance/" target="_blank"><p style="margin-top: 0.1rem; margin-bottom: 0.5rem;">Docs</p></a>
           <router-link style="text-decoration: none; color: inherit;" :to="{name: 'Join To Community'}"><p style="margin-top: 0.1rem; margin-bottom: 0.5rem;">Join</p></router-link>
               
           <router-link style="text-decoration: none; color: inherit;" :to="{name: 'Switch Network'}">
