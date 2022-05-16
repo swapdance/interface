@@ -20,7 +20,11 @@ npm install
 
 ### Env.local
 
-Create env.local file. Edit VUE_APP_ALCHEMY_API_KEY and VUE_APP_GOERLI_ or VUE_APP_RINKEBY_ vars.
+Create env.local file. 
+
+First of all you need to edit VUE_APP_ALCHEMY_API_KEY. 
+
+Set contracts addrs within VUE_APP_GOERLI_ or VUE_APP_RINKEBY_ if you want to test interface with Rinkeby or Goerli network.
 
 ```
 VUE_APP_MAINNET_ETHERSCAN = https://etherscan.io/
