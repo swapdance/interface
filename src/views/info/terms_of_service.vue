@@ -16,7 +16,7 @@
             <p style="text-align: start; margin-bottom: 1rem;">We are not using cookies on our website!</p>
             <h4 style="text-align: left; margin-bottom: 1rem;">License</h4>
             <p style="text-align: start; margin-bottom: 1rem;">Unless otherwise stated, Swap.Dance and/or its licensors own the intellectual property rights for all material on Swap.Dance. All intellectual property rights are reserved. You may access this from Swap.Dance for your own personal use subjected to restrictions set in these terms and conditions.</p>
-            <p style="text-align: start; margin-bottom: 1rem;"><strong>You must not:</strong></p>
+            <p style="text-align: start; margin-bottom: 1rem;"><strong>It is forbidden to:</strong></p>
             <p style="text-align: start; margin-bottom: 1rem;"> - Convert or swap stolen funds.</p>
             <p style="text-align: start; margin-bottom: 1rem;"> - Create pair with scam ERC20 asset.</p>
             <h4 style="text-align: left; margin-bottom: 1rem;">Your Privacy</h4>
