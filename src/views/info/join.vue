@@ -16,6 +16,12 @@
                 <a href="http://discord.gg/GSVZurABjd">http://discord.gg/GSVZurABjd</a>
             </div>
 
+
+             <div className='wrapper2inline'>
+                <p style="text-align: start;">Reddit:</p>
+                <a href="https://www.reddit.com/r/DancerDD/">https://www.reddit.com/r/DancerDD/</a>
+            </div>
+
             <div className='wrapper2inline'>
               <p style="text-align: start;">Twitter:</p>
               <a href="https://twitter.com/SwapDance">https://twitter.com/SwapDance</a>
