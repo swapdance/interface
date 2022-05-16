@@ -128,23 +128,23 @@ export default {
             is_signer = false;
             console.log('network is not available, set connect...');
             // to do, edit vars to mainnet after launch
-            provider = new ethers.providers.AlchemyProvider("rinkeby", apiKey);
-            dance_addr = process.env.VUE_APP_RINKEBY_DANCE_ADDR;
-            super_addr = process.env.VUE_APP_RINKEBY_SUPER_ADDR;
-            router_addr = process.env.VUE_APP_RINKEBY_ROUTER_ADDR;
-            station_addr = process.env.VUE_APP_RINKEBY_STATION_ADDR;
-            deployer_addr = process.env.VUE_APP_RINKEBY_DEPLOYER_ADDR;
-            etherscan_link = process.env.VUE_APP_RINKEBY_ETHERSCAN;
+            provider = new ethers.providers.AlchemyProvider("homestead", apiKey);
+            dance_addr = process.env.VUE_APP_MAINNET_DANCE_ADDR;
+            super_addr = process.env.VUE_APP_MAINNET_SUPER_ADDR;
+            router_addr = process.env.VUE_APP_MAINNET_ROUTER_ADDR;
+            station_addr = process.env.VUE_APP_MAINNET_STATION_ADDR;
+            deployer_addr = process.env.VUE_APP_MAINNET_DEPLOYER_ADDR;
+            etherscan_link = process.env.VUE_APP_MAINNET_ETHERSCAN;
             // set store
             store.state.dance_token = dance_addr;
             store.state.super_station = super_addr;
             store.state.etherscan_link = etherscan_link;
-            store.state.current_network_name = "Rinkeby";
+            store.state.current_network_name = "Ethereum";
             // set network coin
             store.state.network_coin_name = "Ethereum";
             store.state.network_coin_symbol = "ETH";
             store.state.network_coin_decimal = 18;
-            store.state.network_coin_wrapped_addr = process.env.VUE_APP_RINKEBY_ETH_WRAPPED_ADDR;
+            store.state.network_coin_wrapped_addr = process.env.VUE_APP_MAINNET_ETH_WRAPPED_ADDR;
             store.state.network_coin_wrapped_name = "Wrapped Ether";
             store.state.network_coin_wrapped_symbol = "WETH";
         }

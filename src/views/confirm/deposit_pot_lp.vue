@@ -48,7 +48,7 @@
             </div> 
             <div v-if="tx_confirm1 == true && tx_confirm2 == false" className='wrapper2i' style="margin-bottom: 1rem;">
               <h4 style="text-align: left;">Deposit {{'xDx' + token_symbol1 + 'x' + token_symbol2}}</h4>
-              <div @click="open_hash(hash_deposit_approve)" style="text-align: right;">Tx Pending<span class="one">.</span><span class="two">.</span><span class="three">.</span></div>
+              <div @click="open_hash(hash_deposit_approve)" style="text-align: right; cursor: pointer;">Tx Pending<span class="one">.</span><span class="two">.</span><span class="three">.</span></div>
             </div>          
             <div v-if="tx_confirm2 == true" className='wrapper2i' style="margin-bottom: 1rem;">
               <h4 style="text-align: left;">Deposit {{'xDx' + token_symbol1 + 'x' + token_symbol2}}</h4>

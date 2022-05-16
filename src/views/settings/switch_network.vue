@@ -27,42 +27,6 @@
               <p style="text-align: right;">{{mainnet_total_supply}}</p>
             </div>      
             <hr class="solid">
-            <div className='wrapper2i' style="align-items: center;">    
-              <h4 style="text-align: left;">Ethereum Rinkeby</h4>
-              <button class="network-button" @click="select_network('0x4')" style="font-size: 1rem;">{{rinkeby_button}}</button>
-            </div>
-            <div className='wrapper2inline' style="margin-bottom: 1rem;">
-              <p style="text-align: left;">Total Pairs</p>
-              <p style="text-align: right;">{{rinkeby_total_pairs}}</p>
-            </div>
-            <div className='wrapper2inline' style="margin-bottom: 1rem; grid-template-columns: 0.7fr 2.3fr;">
-              <p style="text-align: left;">Token</p>
-              <p v-if="rinkeby_button != 'Switch'" style="text-align: right; cursor: pointer;" @click="open_addr(dance_addr)"><mark class="purple">{{rinkeby_token_name}}</mark></p>
-              <p v-if="rinkeby_button == 'Switch'" style="text-align: right;"><mark class="purple">{{rinkeby_token_name}}</mark></p>
-            </div>
-            <div className='wrapper2inline' style="margin-bottom: 1rem; grid-template-columns: 1.1fr 1.9fr;">
-              <p style="text-align: left;">Current Supply</p>
-              <p style="text-align: right;">{{rinkeby_total_supply}}</p>
-            </div>      
-            <hr class="solid">
-            <div className='wrapper2i' style="align-items: center;">    
-              <h4 style="text-align: left;">Ethereum Goerli</h4>
-              <button class="network-button" @click="select_network('0x5')" style="font-size: 1rem;">{{goerli_button}}</button>
-            </div>
-            <div className='wrapper2inline' style="margin-bottom: 1rem;">
-              <p style="text-align: left;">Total Pairs</p>
-              <p style="text-align: right;">{{goerli_total_pairs}}</p>
-            </div>
-            <div className='wrapper2inline' style="margin-bottom: 1rem; grid-template-columns: 0.7fr 2.3fr;">
-              <p style="text-align: left;">Token</p>
-              <p v-if="goerli_button != 'Switch'" style="text-align: right; cursor: pointer;" @click="open_addr(dance_addr)"><mark class="purple">{{goerli_token_name}}</mark></p>
-              <p v-if="goerli_button == 'Switch'" style="text-align: right;"><mark class="purple">{{goerli_token_name}}</mark></p>
-            </div>
-            <div className='wrapper2inline' style="margin-bottom: 1rem; grid-template-columns: 1.1fr 1.9fr;">
-              <p style="text-align: left;">Current Supply</p>
-              <p style="text-align: right;">{{goerli_total_supply}}</p>
-            </div>
-            <hr class="solid">
           </div> 
           
         </div>
