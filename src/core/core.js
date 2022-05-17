@@ -128,7 +128,7 @@ export default {
             is_signer = false;
             console.log('network is not available, set connect...');
             // to do, edit vars to mainnet after launch
-            provider = new ethers.providers.AlchemyProvider("homestead", apiKey);
+            provider = new ethers.providers.AlchemyProvider("rinkeby", apiKey);
             dance_addr = process.env.VUE_APP_MAINNET_DANCE_ADDR;
             super_addr = process.env.VUE_APP_MAINNET_SUPER_ADDR;
             router_addr = process.env.VUE_APP_MAINNET_ROUTER_ADDR;
