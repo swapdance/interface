@@ -256,7 +256,7 @@ export default {
         token_price2.value = get_price;
         
         
-        token_price2_min.value = (token_price2.value - (token_price2.value * slippage.value)/100).toFixed(token_decimal2.value == 18 ? token_decimal2.value - 5 : token_decimal2.value);
+        token_price2_min.value = (token_price2.value - (token_price2.value * slippage.value)/100).toFixed(token_decimal2.value == 18 ? token_decimal2.value - 5 : token_decimal2.value);//.replace(/(\.0*|(?<=(\..*))0*)$/, '') apple safari crashes...
 
         let temp_impact_price;
         let temp_impact_price2;
