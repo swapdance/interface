@@ -158,7 +158,7 @@ export default {
     function use_max_balance() {
       if (wrapped_symbol.value == 'WETH') {
         if (connect_button.value != 'Connect to a wallet') {
-          if (user_network_balance > 0.001) {
+          if (user_network_balance.value > 0.001) {
             token_price1.value = user_network_balance.value - 0.001;
           } else {
             token_price1.value = "0.0"
