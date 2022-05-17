@@ -96,7 +96,7 @@
             </div>
             <div className='wrapper2inline' style="grid-template-columns: 1fr 2fr;">
               <p style="text-align: left; width: 150%;">{{wrapped_name}}</p>
-              <p style="text-align: right;">Available {{user_wrapped_balance.toString().substring(0, 15)}}</p>
+              <p style="text-align: right;">Available {{user_network_balance.toString().substring(0, 15)}}</p>
             </div>
           </div>
           <hr class="solid">
@@ -158,7 +158,12 @@ export default {
     function use_max_balance() {
       if (wrapped_symbol.value == 'WETH') {
         if (connect_button.value != 'Connect to a wallet') {
-          token_price1.value = user_network_balance.value - 0.001;
+          if (user_network_balance > 0.001) {
+            token_price1.value = user_network_balance.value - 0.001;
+          } else {
+            token_price1.value = "0.0"
+          }
+          
         } else {
           token_price1.value = "0.0";
         }
